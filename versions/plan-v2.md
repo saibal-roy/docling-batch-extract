@@ -1,4 +1,4 @@
-# Plan v2 — PDF → Markdown extraction via docling-serve
+# Plan v2: PDF → Markdown extraction via docling-serve
 
 **Status:** Superseded by [plan-v3.md](plan-v3.md). Supersedes [plan-v1.md](plan-v1.md).
 **Date:** 2026-10-08

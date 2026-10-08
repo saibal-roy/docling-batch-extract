@@ -1,4 +1,4 @@
-# Landing page — Plan v2 (GitHub Pages, with local Pages simulation)
+# Landing page: Plan v2 (GitHub Pages, with local Pages simulation)
 
 **Status:** Built and checked locally (LA1, LA2, LA4, LA5, LA7–LA11 pass); publishing waits for the repository. Supersedes [landing-page-plan-v1.md](landing-page-plan-v1.md). This is a separate track from the extractor plans.
 **Date:** 2026-10-08
@@ -122,11 +122,11 @@ Built as planned, with these differences, each found while testing locally:
 | lychee for link checking | `scripts/check_site.py` (standard library only) crawls the served site: HTTP status of every page and asset, `#fragment` targets, and search-index terms. An optional `--deny-file` checks for terms that must never appear (kept outside the repository) | No extra image; checks anchors and search too; the same script runs in the Pages workflow |
 | Mermaid diagram on the landing page | Plain-text diagram | Mermaid loads a large JavaScript library from a CDN; phone performance was 63 |
 | Theme fonts (Google Fonts) | System fonts (`theme.font: false`) | Faster, and no third-party requests |
-| — | `docs/stylesheets/extra.css` + `docs/javascripts/a11y.js`: underlined links in text, darker code comments, footer and tab contrast, an accessible name for the search dialog | Lighthouse accessibility was 89 |
-| — | The local nginx compresses responses | GitHub Pages does too, so local Lighthouse figures stay comparable |
-| — | Folder links (`versions/`) point at the folder's index page | `--strict` flagged them as unrecognized links |
-| — | Heading anchors use GitHub-style slugs (`pymdownx.slugs`) | The README's own `#links` work unchanged on the site |
-| — | MkDocs pinned at 1.6.1 (Material 9.7.7) | Material's maintainers warn that MkDocs 2.0 drops plugins and theme overrides |
+| (not planned) | `docs/stylesheets/extra.css` + `docs/javascripts/a11y.js`: underlined links in text, darker code comments, footer and tab contrast, an accessible name for the search dialog | Lighthouse accessibility was 89 |
+| (not planned) | The local nginx compresses responses | GitHub Pages does too, so local Lighthouse figures stay comparable |
+| (not planned) | Folder links (`versions/`) point at the folder's index page | `--strict` flagged them as unrecognized links |
+| (not planned) | Heading anchors use GitHub-style slugs (`pymdownx.slugs`) | The README's own `#links` work unchanged on the site |
+| (not planned) | MkDocs pinned at 1.6.1 (Material 9.7.7) | Material's maintainers warn that MkDocs 2.0 drops plugins and theme overrides |
 
 **Local results:** strict build passes; the crawl under `/docling-batch-extract/` covers 24 URLs (18 pages) with no broken links, anchors or assets and no 404s from nginx. Lighthouse on the home page: phone performance 92–99, accessibility 100, best practices 96, SEO 100; laptop 100 / 100 / 96 / 100. On a 375 px phone viewport the content fits with no horizontal scroll.
 

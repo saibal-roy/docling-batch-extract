@@ -1,4 +1,4 @@
-# Proposal — Amazon S3 (via S3 Files) as an optional input provider
+# Proposal: Amazon S3 (via S3 Files) as an optional input provider
 
 **Status:** Proposal for discussion, **not implemented**. It is part of the design thinking for the next stage of the solution. Local disk (EBS) stays the default and the only validated option.
 **Author:** Saibal Roy · **Date:** 2026-10-08

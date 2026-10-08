@@ -18,14 +18,14 @@ The original build took many small requests, and several decisions only came out
 
 | Part | Use it to |
 |------|-----------|
-| 1 — Build from scratch | Rebuild this tool with every validated decision built in |
-| 2 — Operate and manage | Set up servers (incl. AWS EC2), the first demo run, pilot batches, day-to-day checks |
-| 3 — Maintain | Upgrades (docling, Ubuntu LTS, packages), re-sizing, security reviews, releases |
-| 4 — Explore and investigate | Diagnose slow or failing documents, compare quality and performance |
-| 5 — Improve and extend | Page citations, RAG chunking, scale-out, S3 Files inputs, watch mode |
-| 6 — Landing page and user site | Build, preview (both addresses) and maintain the GitHub Pages sites |
-| 7 — Reusable template | Start **any** similar open-source tool with the same working method |
-| 8 — Keeping this file current | Update prompts.md, STORY.md and the plans after every validated change |
+| 1. Build from scratch | Rebuild this tool with every validated decision built in |
+| 2. Operate and manage | Set up servers (incl. AWS EC2), the first demo run, pilot batches, day-to-day checks |
+| 3. Maintain | Upgrades (docling, Ubuntu LTS, packages), re-sizing, security reviews, releases |
+| 4. Explore and investigate | Diagnose slow or failing documents, compare quality and performance |
+| 5. Improve and extend | Page citations, RAG chunking, scale-out, S3 Files inputs, watch mode |
+| 6. Landing page and user site | Build, preview (both addresses) and maintain the GitHub Pages sites |
+| 7. Reusable template | Start **any** similar open-source tool with the same working method |
+| 8. Keeping this file current | Update prompts.md, STORY.md and the plans after every validated change |
 
 How to use them:
 - Run the Part 1 prompts in order, in a new empty folder, and review each result before moving on.
@@ -35,7 +35,7 @@ How to use them:
 
 ---
 
-## Part 1 — Build from scratch
+## Part 1: Build from scratch
 
 ### 1.1 Context and plan
 
@@ -200,7 +200,7 @@ your actionlint predates it).
 
 ---
 
-## Part 2 — Operate and manage
+## Part 2: Operate and manage
 
 ### Server setup, sizing and cleanup scripts
 
@@ -278,7 +278,7 @@ succeed now back to inputs/. Don't modify the PDFs.
 
 ---
 
-## Part 3 — Maintain
+## Part 3: Maintain
 
 ```text
 Quarterly maintenance check (read-only first): compare every pin with the latest LTS / stable
@@ -365,7 +365,7 @@ that fails. Don't tag or push: I'll do that.
 
 ---
 
-## Part 4 — Explore and investigate
+## Part 4: Explore and investigate
 
 ```text
 <pdf> is slow or crashes the container. Using tests/measure_job.py, measure 1 page and 5 pages
@@ -395,7 +395,7 @@ For each, state the expected benefit and the memory/time cost on 2 vCPU, and pro
 
 ---
 
-## Part 5 — Improve and extend
+## Part 5: Improve and extend
 
 Each of these produces a new `versions/plan-vN.md` (or a `proposal-*.md`) before any code is written, and goes through the gate before it ships.
 
@@ -437,7 +437,7 @@ Add a --watch mode that processes new PDFs as they arrive (ignoring partial uplo
 
 ---
 
-## Part 6 — Landing page and user site (GitHub Pages)
+## Part 6: Landing page and user site (GitHub Pages)
 
 Plan: [`versions/landing-page-plan-v2.md`](versions/landing-page-plan-v2.md).
 
@@ -490,7 +490,7 @@ mismatch at the source, never in the generated site.
 
 ---
 
-## Part 7 — Reusable template for any solution like this
+## Part 7: Reusable template for any solution like this
 
 Use this as the **first prompt** for a new open-source tool built with Claude, for a client or not. It builds in the working method that made this project fast and safe: requirement IDs, versioned plans, evidence-based decisions, real-data testing early, sizing for cost on measured numbers, client-data protection, security by default, and CI from day one.
 
@@ -542,7 +542,7 @@ Start with step 1.
 
 ---
 
-## Part 8 — Keeping this file current
+## Part 8: Keeping this file current
 
 ```text
 We just finished <change> and the gate passed. Update prompts.md so a fresh build reaches today's

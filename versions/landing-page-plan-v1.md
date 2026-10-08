@@ -1,4 +1,4 @@
-# Landing page — Plan v1 (GitHub Pages)
+# Landing page: Plan v1 (GitHub Pages)
 
 **Status:** Superseded by [landing-page-plan-v2.md](landing-page-plan-v2.md) (local Pages simulation, link handling). This is a separate track from the extractor plans (`plan-v1` … `plan-v5`).
 **Date:** 2026-10-08

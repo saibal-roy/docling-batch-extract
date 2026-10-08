@@ -1,4 +1,4 @@
-# Plan v5 — benchmark-driven defaults, test suite, open-source release
+# Plan v5: benchmark-driven defaults, test suite, open-source release
 
 **Status:** Superseded by [plan-v6.md](plan-v6.md) (semantic versioning). Supersedes [plan-v4.md](plan-v4.md).
 **Date:** 2026-10-08

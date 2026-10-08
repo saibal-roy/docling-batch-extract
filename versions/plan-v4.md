@@ -1,4 +1,4 @@
-# Plan v4 — PDF → Markdown extraction via docling-serve (as implemented)
+# Plan v4: PDF → Markdown extraction via docling-serve (as implemented)
 
 **Status:** Superseded by [plan-v5.md](plan-v5.md) (scanned PDFs no longer split; timeout per page). Supersedes [plan-v3.md](plan-v3.md).
 **Date:** 2026-10-08

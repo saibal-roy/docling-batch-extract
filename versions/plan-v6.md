@@ -1,4 +1,4 @@
-# Plan v6 — semantic versioning and releases
+# Plan v6: semantic versioning and releases
 
 **Status:** Superseded by [plan-v7.md](plan-v7.md) (2 vCPU target, latest LTS, docling v1.36.0). Supersedes [plan-v5.md](plan-v5.md).
 **Date:** 2026-10-08

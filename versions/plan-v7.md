@@ -1,4 +1,4 @@
-# Plan v7 — 2 vCPU / 8 GB target, latest LTS only, latest stable dependencies
+# Plan v7: 2 vCPU / 8 GB target, latest LTS only, latest stable dependencies
 
 **Status:** Implemented; validated by the Ubuntu 26.04 go-ahead gate on the simulated 2 vCPU / 8 GB machine (see `tests/results/*_ubuntu-26.04/`). Supersedes [plan-v6.md](plan-v6.md).
 **Date:** 2026-10-08
