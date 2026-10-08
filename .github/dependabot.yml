@@ -1,0 +1,30 @@
+# Nightly dependency updates (01:30 India time). Patch and minor releases are grouped into one
+# pull request per ecosystem and merged automatically once CI passes
+# (.github/workflows/dependabot-auto-merge.yml). Major releases stay open for review: moving to a
+# new major is a deliberate decision. Dependabot only proposes stable releases, never pre-releases.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: daily
+      time: "01:30"
+      timezone: Asia/Kolkata
+    groups:
+      actions:
+        update-types: [minor, patch]
+  - package-ecosystem: pip
+    directories: [/, /tests, /docs]
+    schedule:
+      interval: daily
+      time: "01:30"
+      timezone: Asia/Kolkata
+    groups:
+      python:
+        update-types: [minor, patch]
+    ignore:
+      # The documentation site stays on MkDocs 1.x (see CLAUDE.md).
+      - dependency-name: mkdocs
+        update-types: ["version-update:semver-major"]
+# The docling-serve image in docker-compose.yml is not listed on purpose: engine upgrades go
+# through the go-ahead gate and ship as a MINOR release with a re-index note (CHANGELOG.md).

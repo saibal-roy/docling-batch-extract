@@ -2,7 +2,7 @@
 
 Prompts for building, running, maintaining and extending this solution with Claude (Claude Code or any coding agent).
 
-The original build took many small requests, and several decisions only came out of testing on real documents and real hardware limits. These prompts put **the current validated design** up front, so a fresh build reaches it directly. The reasoning and evidence behind each decision are in [`versions/`](versions/) (plan-v1 → plan-v7), and the story is in [`STORY.md`](STORY.md). The build prompts and the reusable template are also published, with the approach behind them (real production requirements → reusable, cost-effective and reliable business solutions), on [saibal-roy.github.io](https://github.com/saibal-roy/saibal-roy.github.io/blob/main/prompts.md).
+The original build took many small requests, and several decisions only came out of testing on real documents and real hardware limits. These prompts put **the current validated design** up front, so a fresh build reaches it directly. The reasoning and evidence behind each decision are in [`versions/`](versions/) (plan-v1 → plan-v7), and the story is in [`STORY.md`](STORY.md). This file is the only copy: [saibal-roy.github.io](https://saibal-roy.github.io/) links here instead of keeping its own, so there is one version to improve.
 
 **Validated baseline these prompts describe** (go-ahead gate passed 2026-10-08):
 
@@ -25,13 +25,15 @@ The original build took many small requests, and several decisions only came out
 | 5. Improve and extend | Page citations, RAG chunking, scale-out, S3 Files inputs, watch mode |
 | 6. Landing page and user site | Build, preview (both addresses) and maintain the GitHub Pages sites |
 | 7. Reusable template | Start **any** similar open-source tool with the same working method |
-| 8. Keeping this file current | Update prompts.md, STORY.md and the plans after every validated change |
+| 8. Keeping this file current | Update prompts.md, STORY.md and the plans after every validated change, and improve the prompts from the last successful run |
 
 How to use them:
 - Run the Part 1 prompts in order, in a new empty folder, and review each result before moving on.
 - Text in `<angle brackets>` is for you to fill in.
 - Never paste client documents or their text into a prompt. Refer to them by path on your own machine, and keep them in git-ignored folders.
 - Don't let the agent commit, push or create repositories unless you ask. Publishing stays your decision.
+
+**These prompts improve themselves.** After any run that succeeded (its checks passed and you accepted the result), the agent compares what the prompt asked for with what actually worked: steps it had to add, corrections you made, a better order, a check that caught something, wording that sent it the wrong way. Each improvement is folded into the prompt itself, written as the better instruction rather than as history, and gets one line in the [improvements log](#improvements-log) at the end. If nothing needed changing, nothing changes. Use the Part 8 prompt to do this deliberately; `CLAUDE.md` asks the agent to do it at the end of every successful run.
 
 ---
 
@@ -180,6 +182,17 @@ tests/fixtures) that keeps the folder but ignores its contents. Credit the autho
 quoted document text, and remove them.
 ```
 
+```text
+Prepare the GitHub repository settings (I'll apply anything that needs my login): description,
+website (the documentation site) and topics; a 1280 x 640 social preview image committed to
+docs/images/social-preview.png (uploaded by hand under Settings, General, Social preview);
+private vulnerability reporting, secret scanning and push protection; Dependabot alerts and
+Dependabot security updates; wiki and Projects turned off; delete head branches after merge; and a
+ruleset on the default branch that blocks deletion and force pushes without requiring pull
+requests (a solo maintainer pushes to main). Check every setting through the API afterwards and
+record what's on and what isn't in the checklist at https://saibal-roy.github.io/github-practices/.
+```
+
 ### 1.6 Continuous integration and releases
 
 ```text
@@ -194,9 +207,13 @@ Add .github/workflows/ci.yml (push to main, pull requests, manual, and workflow_
   upload it as an artifact, dump container logs on failure.
 Add release.yml: tag vX.Y.Z → verify tag = __version__ = a dated CHANGELOG section → reuse ci.yml →
 create the GitHub Release from that changelog section (relative links made absolute). Use the
-latest major versions of actions/checkout, setup-python, upload-artifact, upload-pages-artifact
-and deploy-pages. Validate with actionlint (declare ubuntu-26.04 in .github/actionlint.yaml if
-your actionlint predates it).
+latest releases of actions/checkout, setup-python, upload-artifact, upload-pages-artifact and
+deploy-pages, each pinned to its full commit SHA with the version as a comment
+(`uses: actions/checkout@<sha> # v7.0.1`), and add .github/dependabot.yml (github-actions,
+monthly, one grouped pull request) so the pins stay current. Give every workflow its own
+permissions block (read-only unless a job must write). Validate with actionlint (declare
+ubuntu-26.04 in .github/actionlint.yaml if your actionlint predates it). To release: date the
+CHANGELOG section, push the tag, and let the workflow gate it; don't create releases by hand.
 ```
 
 ---
@@ -533,12 +550,17 @@ Working method (follow strictly)
    results), LICENSE, CHANGELOG (semantic versioning with a defined public contract), SECURITY.md
    (private reporting through GitHub, never attach real documents), CLAUDE.md,
    setup / demo / cleanup scripts, CI + release workflows, a documentation site checked locally
-   before publishing, and a prompts.md that rebuilds the validated design.
-9. Keep STORY.md: a timeline with real times, what was caught and how, the system-thinking
+   before publishing, and a prompts.md that rebuilds the validated design and improves itself
+   after every successful run (improvements log at the end).
+9. GitHub settings, following https://saibal-roy.github.io/github-practices/: private
+   vulnerability reporting, secret scanning and push protection, Dependabot alerts and security
+   updates, actions pinned to commit SHAs with a Dependabot config for them, a read-only default
+   workflow token, a ruleset protecting the default branch, unused tabs off, a social preview.
+10. Keep STORY.md: a timeline with real times, what was caught and how, the system-thinking
    principles, and results tables that say "pending" until real numbers exist.
-10. Before anything goes public, run a pre-publish review: what exactly is published, privacy
+11. Before anything goes public, run a pre-publish review: what exactly is published, privacy
     and secrets, credibility of every claim, tone, first impressions, client confidentiality.
-11. Don't commit, push or publish unless I ask.
+12. Don't commit, push or publish unless I ask.
 Start with step 1.
 ```
 
@@ -554,3 +576,24 @@ and keep the history itself in versions/. Then add the change to STORY.md's time
 time and evidence, and update CHANGELOG.md under the next version. Only include what was
 validated; don't add numbers that weren't measured.
 ```
+
+```text
+Improve the prompts from the last run. Look at what we just did (<task>, which succeeded): the
+prompt we started from, every correction I made, every step you added or reordered, and every
+check that caught a problem. Rewrite the affected prompts in this file so the next run gets it
+right first time, as instructions rather than history. Add one line per change to the
+improvements log (date, prompt, what changed, evidence). If nothing needs improving, say so and
+change nothing. Show me the diff.
+```
+
+## Improvements log
+
+One line per improvement, newest first: date, prompt, what changed, and the run it came from.
+
+| Date | Prompt | What changed | From |
+|---|---|---|---|
+| 2026-10-09 | 1.5 | Added the GitHub settings prompt (security settings, Dependabot, ruleset, social preview, unused tabs off) | Applying the GitHub practices checklist to this repository |
+| 2026-10-09 | 1.6 | Actions pinned to commit SHAs with a Dependabot config to keep them current; per-workflow permissions; release only through the tag workflow | Same, and the v0.1.0 release |
+| 2026-10-09 | 7 | Template now includes the GitHub settings step and self-improving prompts | Same |
+| 2026-10-09 | 1.5 | SECURITY.md and private vulnerability reporting added to the open-source basics | Adding the security policy |
+| 2026-10-09 | Header, Part 8 | This file is the single copy (the user site links here); prompts now improve themselves after each successful run | Two copies had drifted apart |

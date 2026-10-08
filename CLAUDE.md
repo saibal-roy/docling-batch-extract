@@ -6,6 +6,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 `extract.py` converts PDFs in `inputs/` to Markdown through a long-running docling-serve container (CPU-only image `docling-serve-cpu:v1.36.0`, `127.0.0.1:5001`, 1 worker × 2 threads on the validated 2 vCPU / 8 GB target, Ubuntu 26.04 LTS only). It writes `outputs/<stem>.json`, moves each PDF to `completed/` or `errors/`, and writes one log per PDF to `logs/<stem>.log`. Requirements and their history are in `versions/plan-v*.md` (latest: plan-v7; proposals such as `proposal-s3-files-inputs.md` are not implemented). Never commit client documents or their text; each data folder has its own `.gitignore` (keep the folder, ignore its contents; don't delete these files), and `*.pdf` and `.claude/` are ignored at the root, and real PDFs for benchmarks go in the git-ignored `tests/fixtures/`. The README covers setup, sizing and measured benchmarks.
 
+## Keeping prompts.md current
+
+`prompts.md` is the single copy of the build prompts (saibal-roy.github.io links to it). At the end of every successful run (checks passed, the owner accepted the result), compare the prompt that started it with what actually worked, fold any improvement into the prompt itself, and add a line to its improvements log. Change nothing if nothing needs improving.
+
 ## Commands
 
 ```bash

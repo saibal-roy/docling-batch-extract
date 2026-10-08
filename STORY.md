@@ -72,7 +72,7 @@ The times above come from the session itself. About **2.5 hours of the ~6 hours 
 
 ## System thinking behind the solution
 
-This is how Saibal builds open source: from real production requirements to reusable solutions, with the systems thinking as part of the deliverable. The engineering followed a few business-first principles (also written up as reusable prompts on [saibal-roy.github.io](https://github.com/saibal-roy/saibal-roy.github.io/blob/main/prompts.md)):
+This is how Saibal builds open source: from real production requirements to reusable solutions, with the systems thinking as part of the deliverable. The engineering followed a few business-first principles (also written up as reusable prompts in [prompts.md](prompts.md)):
 
 | Principle | How it shows up |
 |-----------|-----------------|
