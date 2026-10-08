@@ -116,8 +116,8 @@ check A8 "rerun with empty inputs/: nothing processed, exit code 0" bash -c "[ $
 
 # --- Memory throttle -------------------------------------------------------------------
 fresh; cp "$PDFS"/{small_a,small_b,medium}.pdf "$WORK/run/inputs/"; healthy
-run throttle --mem-high 0.3
-check A19 "--mem-high 0.3: THROTTLE logged and the run still completes" \
+run throttle --mem-high 0.01   # 1 % of any limit is below docling's idle memory, so it always throttles
+check A19 "--mem-high 0.01 (below idle memory on any limit): THROTTLE logged and the run still completes" \
   bash -c "[ $RC -eq 0 ] && grep -q 'THROTTLE    on' '$OUT' && [ $(count completed) -eq 3 ]"
 
 # --- Memory monitor unavailable ----------------------------------------------------------

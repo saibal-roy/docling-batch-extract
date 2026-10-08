@@ -318,27 +318,39 @@ packages have no known critical advisories. Report findings with evidence; fix n
 ```
 
 ```text
-Before I make this public (or publish a release), review it as a stranger, a client and a hiring
-manager would, with my reputation in mind (<name>, <website>, <LinkedIn>, <GitHub>). Read-only
-first; report, then fix only what I approve:
-1. Exactly what would be published: stage a throwaway copy with git add -A and list the files,
-   total size and largest files. Flag local paths or usernames, emails other than <public email>,
-   tokens or keys, client names, file names or quoted document text, internal hostnames, and
-   anything in .claude/, .env, logs or data folders. Check the user-site folder too.
-2. Credibility: every number must be measured and say where (hardware and date); estimates must be
-   labelled; prices must have a source and an "as of" date; nothing claimed that wasn't run
-   (e.g. a cloud pilot). Flag stale facts that contradict the current validated state, titles or
-   timelines that overstate, and invented figures.
-3. Tone: credit the human owner for requirements and decisions and the AI for execution; no
-   claims that belittle engineers or other projects (state trade-offs about third-party tools
-   neutrally, with data).
-4. First impressions: does the README answer what / why / how to start in the first screen? Do the
-   badges, links and sites work? Will CI pass on its first GitHub run (anything not yet run there
-   is a risk to call out)? Are licenses and attributions for bundled third-party files correct?
-5. Confidentiality judgement: does the public story reveal anything a client agreement might
-   cover (the client's identity, the engagement, timelines, volumes)? Ask me if unsure.
-Then classify each finding as "fix before publishing" or "can wait", with a one-line reason, and
-re-run all checks (lint, tests, site build and crawl, privacy audit) after any fix.
+Before I make this public (or publish a release), review what would ACTUALLY be published, not
+what you remember, as a stranger, a client and a hiring manager would, with my reputation in mind
+(<name>, <website>, <LinkedIn>, <GitHub>, public commit email <email>). All checks are read-only;
+report first, then fix only what I approve.
+
+0. Dry run: copy each repository folder (including .claude/, generated sites, data folders) to a
+   throwaway directory, git init + git add -A + commit there with my name and email, and review
+   that staged set. Delete the copy afterwards; never touch the real folders.
+1. Personal data and local paths: email addresses other than <email>, my machine username, home or
+   temp folder paths (/Users/…, /private/tmp/…), phone numbers, internal hostnames.
+2. Secrets and client data: tokens and keys (gh*_, AKIA…, private keys, passwords), client or
+   partner names, client file names, quoted document text, anything from .claude/, .env, logs or
+   data folders. Data folders may contain only their own .gitignore; the only PDFs allowed are
+   licensed demo files listed with their license.
+3. Size and noise: file count, total size and the largest files; flag bloated or noisy content
+   (raw test logs, apt output, screenshots heavier than needed) and suggest trimming only where it
+   hurts readability or clone time.
+4. Claims: every number measured and labelled with hardware and date; estimates labelled as
+   estimates; prices sourced with an "as of" date; nothing claimed that wasn't run (e.g. a cloud
+   pilot); no stale facts that contradict the validated state; no overstated titles or timelines;
+   no invented figures. Tone: I set requirements and made the decisions, the AI executed; no
+   claims that belittle engineers or other projects (state third-party trade-offs neutrally).
+5. The first CI run: anything never run on GitHub yet is a risk. Check what the runner differs in
+   (CPU architecture, CPU count, RAM, disk, Ubuntu image, preinstalled tools) and look for tests
+   whose thresholds assume my machine (e.g. a memory threshold as a fraction of a limit that the
+   runner sizes differently) and for steps that need credentials or interactive input.
+6. Publishing mechanics: git push credentials (is a credential helper set up for HTTPS?), branch
+   name, remotes, Pages source settings, and that commits will carry no co-author or AI trailer
+   (author and committer = me).
+7. Confidentiality judgement: does the public story reveal anything a client agreement might cover
+   (identity, engagement, timelines, volumes)? Generalise the domain if in doubt and ask me.
+Then classify each finding as "fix before publishing" or "can wait", with a one-line reason; after
+any fix, re-run lint, tests, the site build and crawl, and this audit.
 ```
 
 ```text
