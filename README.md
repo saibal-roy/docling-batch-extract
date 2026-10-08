@@ -83,6 +83,7 @@ tests/               acceptance tests and benchmarks (see "Test results")
 prompts.md           prompts to rebuild, operate and extend the solution with Claude
 STORY.md             how it was built: timeline, lessons, go-ahead validation
 LICENSE              MIT
+SECURITY.md          how to report a vulnerability privately
 CHANGELOG.md         releases and the versioning policy (semantic versioning)
 ```
 
@@ -331,7 +332,7 @@ Prices: [m7i.large](https://calculator.holori.com/aws/ec2/m7i.large/us-east-1), 
 How to set it up and run it:
 - **Stop the instance between batches.** You pay per running hour, plus the EBS disk (30 GB recommended, encrypted).
 - Set up with `scripts/setup_ubuntu.sh` on an **Ubuntu 26.04 LTS** AMI, then run `scripts/demo_run.sh` to get that instance's own benchmark.
-- **Security:** see *Production security on AWS* below. Never open port 5001.
+- **Security:** see *Production security on AWS* below. Never open port 5001. To report a vulnerability, see [SECURITY.md](SECURITY.md).
 - The figures below were measured on an Apple M2 limited to 2 CPUs, **not on EC2**. On most EC2 types, 2 vCPUs are **one physical core with two hyperthreads**, so expect EC2 to be slower until `scripts/demo_run.sh` on the instance shows otherwise.
 
 ### Memory profile (measured, 2 vCPU target)

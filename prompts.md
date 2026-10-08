@@ -171,7 +171,8 @@ caveat; larger sizes marked "not validated"), production security on AWS (never 
 SSH from one IP or Session Manager, SSH tunnel for the API, IAM roles instead of keys, encrypted
 EBS), the maintenance policy table of pinned versions, versioning and releases, publishing on
 GitHub Pages, and test results. Use only measured numbers, always with the hardware they came from.
-Update CLAUDE.md. Add an MIT LICENSE (copyright <name> (<github-url>)), a CHANGELOG.md, and
+Update CLAUDE.md. Add an MIT LICENSE (copyright <name> (<github-url>)), a CHANGELOG.md, a
+SECURITY.md (private vulnerability reporting enabled on GitHub; never attach real documents), and
 .gitignore rules: *.pdf (except licensed demo files), .env, .venv, tests/work, site output,
 .claude/, plus a .gitignore inside each data folder (inputs, outputs, completed, errors, logs,
 tests/fixtures) that keeps the folder but ignores its contents. Credit the author with links to
@@ -529,7 +530,8 @@ Working method (follow strictly)
    identifiers before any release.
 8. Ship: README (background, how it works, setup, operations, spec and capacity from measured
    numbers, cost comparison, security, maintenance policy, versioning, troubleshooting, test
-   results), LICENSE, CHANGELOG (semantic versioning with a defined public contract), CLAUDE.md,
+   results), LICENSE, CHANGELOG (semantic versioning with a defined public contract), SECURITY.md
+   (private reporting through GitHub, never attach real documents), CLAUDE.md,
    setup / demo / cleanup scripts, CI + release workflows, a documentation site checked locally
    before publishing, and a prompts.md that rebuilds the validated design.
 9. Keep STORY.md: a timeline with real times, what was caught and how, the system-thinking
