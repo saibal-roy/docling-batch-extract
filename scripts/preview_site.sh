@@ -50,9 +50,11 @@ echo "==> Serving like GitHub Pages: user site at /, project site at /$SUBPATH/ 
 docker rm -f "$NAME" >/dev/null 2>&1 || true
 PAGES=$(mktemp -d)                      # same layout as <user>.github.io
 if [ -f "$USER_SITE/index.html" ]; then
-  # Same files the user site's pages.yml publishes: index.html, .nojekyll and assets/ (not README/scripts)
+  # Same files the user site's pages.yml publishes: index.html, .nojekyll, assets/ and every
+  # top-level folder with its own index.html (e.g. github-practices/); not README/scripts
   cp "$USER_SITE/index.html" "$PAGES/"; [ -f "$USER_SITE/.nojekyll" ] && cp "$USER_SITE/.nojekyll" "$PAGES/"
   [ -d "$USER_SITE/assets" ] && cp -R "$USER_SITE/assets" "$PAGES/"
+  for d in "$USER_SITE"/*/; do d=${d%/}; [ -f "$d/index.html" ] && cp -R "$d" "$PAGES/"; done
   echo "    user site from $(cd "$USER_SITE" && pwd)"
 else
   printf '<!doctype html><title>No user site</title><p>No user site found at %s (set USER_SITE). On GitHub Pages this address is 404 until a &lt;user&gt;.github.io repository exists.</p><p><a href="%s/">Project site</a></p>\n' "$USER_SITE" "$SUBPATH" >"$PAGES/index.html"
