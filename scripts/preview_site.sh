@@ -54,7 +54,7 @@ if [ -f "$USER_SITE/index.html" ]; then
   # top-level folder with its own index.html (e.g. github-practices/); not README/scripts
   cp "$USER_SITE/index.html" "$PAGES/"; [ -f "$USER_SITE/.nojekyll" ] && cp "$USER_SITE/.nojekyll" "$PAGES/"
   [ -d "$USER_SITE/assets" ] && cp -R "$USER_SITE/assets" "$PAGES/"
-  for d in "$USER_SITE"/*/; do d=${d%/}; [ -f "$d/index.html" ] && cp -R "$d" "$PAGES/"; done
+  for d in "$USER_SITE"/*/; do d=${d%/}; if [ -f "$d/index.html" ]; then cp -R "$d" "$PAGES/"; fi; done
   echo "    user site from $(cd "$USER_SITE" && pwd)"
 else
   printf '<!doctype html><title>No user site</title><p>No user site found at %s (set USER_SITE). On GitHub Pages this address is 404 until a &lt;user&gt;.github.io repository exists.</p><p><a href="%s/">Project site</a></p>\n' "$USER_SITE" "$SUBPATH" >"$PAGES/index.html"
