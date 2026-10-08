@@ -8,6 +8,8 @@ Document-heavy work in **legal tech and claims insurance** needed thousands of p
 
 The requirement was a **cost-effective batch pipeline on one small CPU-only server** (validated on **2 vCPU / 8 GB**, no GPU) that runs unattended, never stops on a bad file, and leaves an audit trail for every document.
 
+The aim from the start was more than a one-off script for one engagement: to turn a real production requirement into a **reusable open-source business solution**, cost-effective and reliable enough for another team to deploy, with the reasoning published alongside the code.
+
 ## The approach: Claude as the engineering manager
 
 **Saibal Roy** set the requirements, made every trade-off decision (platform, target machine, engine version, what to publish) and owns the result. **Claude Code** did the planning, building, measuring and documenting, working the way an engineering manager would, so the process can be repeated by any team:
@@ -70,7 +72,7 @@ The times above come from the session itself. About **2.5 hours of the ~6 hours 
 
 ## System thinking behind the solution
 
-The engineering followed a few business-first principles:
+This is how Saibal builds open source: from real production requirements to reusable solutions, with the systems thinking as part of the deliverable. The engineering followed a few business-first principles (also written up as reusable prompts on [saibal-roy.github.io](https://github.com/saibal-roy/saibal-roy.github.io/blob/main/prompts.md)):
 
 | Principle | How it shows up |
 |-----------|-----------------|

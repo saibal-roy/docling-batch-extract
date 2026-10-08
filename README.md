@@ -10,12 +10,14 @@ License: [MIT](LICENSE) · Author: **Saibal Roy** ([website](https://www.saibalr
 
 ## Background
 
-This was built for document-heavy work in **legal tech and claims insurance**. Legal and claims documents (petitions, affidavits, court records, claim forms, assessment reports, many of them scanned) had to be turned into Markdown to feed a **RAG (retrieval-augmented generation) search** system. Cloud services such as AWS Textract or vision-LLM APIs were too expensive for the pilot of **about 500 documents averaging 47 pages (~23,500 pages)**. Legal documents are also confidential, so keeping them on your own server is a benefit in itself.
+This was built for document-heavy work in **legal tech and claims insurance**. Legal and claims documents (petitions, affidavits, court records, claim forms, assessment reports, many of them scanned) had to be turned into Markdown to feed a **RAG (retrieval-augmented generation) search** system. Cloud services such as AWS Textract or vision-LLM APIs were too expensive for the pilot of **about 500 documents averaging 47 pages (~23,500 pages)**. These documents are also confidential, so keeping them on your own server is a benefit in itself.
 
 The requirements were:
 - **Cost:** a single small CPU-only VM, run in batches.
 - **Unattended operation:** a corrupt or awkward PDF must never stop the batch, and every document leaves an audit trail.
 - **Scanned documents:** many legal and claims records are scans whose embedded text layer is poor.
+
+**Why it's open source:** it started as a production requirement, not a demo. It's published as a reusable business solution that other teams with the same problem can deploy on one small server and trust. The reasoning ships with the code: the cost model, the benchmarks behind every default, the acceptance checks and the go-ahead gate.
 
 The [Pilot batch estimate](#pilot-batch-estimate-500-documents--47-pages) section below compares the costs. [`versions/`](versions/) records how the design changed as real documents exposed problems. [`prompts.md`](prompts.md) has prompts to rebuild, run and extend the solution with Claude.
 

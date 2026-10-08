@@ -43,7 +43,7 @@ hide:
 
     ---
 
-    From requirements to a tested, open-source solution in **~3 h 15 min**, and to a validated release with this site in **~4 h**: versioned plans, each decision backed by evidence, and prompts to rebuild it.
+    A real production requirement turned into a **reusable, tested open-source solution**: versioned plans, each decision backed by evidence, a go-ahead gate, and prompts to rebuild it. Built in one day.
 
     [Story](STORY.md) · [Design history](versions/index.md) · [Prompts](prompts.md)
 

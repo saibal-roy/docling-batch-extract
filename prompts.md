@@ -2,7 +2,7 @@
 
 Prompts for building, running, maintaining and extending this solution with Claude (Claude Code or any coding agent).
 
-The original build took many small requests, and several decisions only came out of testing on real documents and real hardware limits. These prompts put **the current validated design** up front, so a fresh build reaches it directly. The reasoning and evidence behind each decision are in [`versions/`](versions/) (plan-v1 → plan-v7), and the story is in [`STORY.md`](STORY.md).
+The original build took many small requests, and several decisions only came out of testing on real documents and real hardware limits. These prompts put **the current validated design** up front, so a fresh build reaches it directly. The reasoning and evidence behind each decision are in [`versions/`](versions/) (plan-v1 → plan-v7), and the story is in [`STORY.md`](STORY.md). The build prompts and the reusable template are also published, with the approach behind them (real production requirements → reusable, cost-effective and reliable business solutions), on [saibal-roy.github.io](https://github.com/saibal-roy/saibal-roy.github.io/blob/main/prompts.md).
 
 **Validated baseline these prompts describe** (go-ahead gate passed 2026-10-08):
 
