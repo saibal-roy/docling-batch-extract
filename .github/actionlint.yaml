@@ -1,0 +1,4 @@
+# ubuntu-26.04 is a GitHub-hosted runner label newer than some actionlint releases.
+self-hosted-runner:
+  labels:
+    - ubuntu-26.04

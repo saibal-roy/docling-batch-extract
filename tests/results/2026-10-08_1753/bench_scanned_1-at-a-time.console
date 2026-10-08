@@ -1,0 +1,20 @@
+2026-10-08T18:09:36 [scanned] DOC_START   doc=scanned.pdf pages=20 chunks=4 chunk_pages=5 scanned_pages=100% force_ocr=True size_mb=2.2
+2026-10-08T18:09:36 RUN_START   files=1 pages=20 chunks=4 max_inflight=1 chunk_pages=5 restarts=0
+2026-10-08T18:09:38 [scanned] SUBMIT      chunk=1/4 pages=1-5 mem=2.6/6.3GiB
+2026-10-08T18:09:48 [scanned] PROGRESS    running=[#1(10s)] done=0/4 elapsed=10s mem=3.0/6.3GiB
+2026-10-08T18:09:56 [scanned] CHUNK_DONE  chunk=1/4 pages=1-5 secs=18.2 sec_per_page=3.64 mem=2.9/6.3GiB
+2026-10-08T18:09:56 [scanned] SUBMIT      chunk=2/4 pages=6-10 mem=2.9/6.3GiB
+2026-10-08T18:09:58 [scanned] PROGRESS    running=[#2(2s)] done=1/4 elapsed=20s mem=2.9/6.3GiB
+2026-10-08T18:10:08 [scanned] PROGRESS    running=[#2(12s)] done=1/4 elapsed=30s mem=3.6/6.3GiB
+2026-10-08T18:10:18 [scanned] PROGRESS    running=[#2(22s)] done=1/4 elapsed=40s mem=3.2/6.3GiB
+2026-10-08T18:10:24 [scanned] CHUNK_DONE  chunk=2/4 pages=6-10 secs=27.4 sec_per_page=5.48 mem=3.2/6.3GiB
+2026-10-08T18:10:24 [scanned] SUBMIT      chunk=3/4 pages=11-15 mem=3.2/6.3GiB
+2026-10-08T18:10:30 [scanned] PROGRESS    running=[#3(6s)] done=2/4 elapsed=52s mem=2.6/6.3GiB
+2026-10-08T18:10:40 [scanned] PROGRESS    running=[#3(16s)] done=2/4 elapsed=62s mem=3.3/6.3GiB
+2026-10-08T18:10:45 [scanned] CHUNK_DONE  chunk=3/4 pages=11-15 secs=21.3 sec_per_page=4.26 mem=3.4/6.3GiB
+2026-10-08T18:10:45 [scanned] SUBMIT      chunk=4/4 pages=16-20 mem=3.4/6.3GiB
+2026-10-08T18:10:51 [scanned] PROGRESS    running=[#4(6s)] done=3/4 elapsed=73s mem=3.5/6.3GiB
+2026-10-08T18:11:01 [scanned] PROGRESS    running=[#4(16s)] done=3/4 elapsed=83s mem=3.3/6.3GiB
+2026-10-08T18:11:06 [scanned] CHUNK_DONE  chunk=4/4 pages=16-20 secs=21.2 sec_per_page=4.25 mem=3.4/6.3GiB
+2026-10-08T18:11:06 [scanned] DOC_DONE    pages=20 chunks=4 secs=88.2 sec_per_page=4.41 output=outputs/scanned.json moved=completed/scanned.pdf
+2026-10-08T18:11:06 RUN_END     ok=1 failed=0 pages=20 secs=88.2 sec_per_page=4.41 restarts=0

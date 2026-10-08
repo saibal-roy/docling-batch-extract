@@ -1,0 +1,7 @@
+2026-10-08T17:47:06 [small_a] DOC_START   doc=small_a.pdf pages=3 chunks=1 chunk_pages=5 scanned_pages=0% force_ocr=False size_mb=0.0
+2026-10-08T17:47:06 RUN_START   files=1 pages=3 chunks=1 max_inflight=2 chunk_pages=5 restarts=n/a
+2026-10-08T17:47:06 WARNING     memory monitoring unavailable (Error response from daemon: No such container: doesnotexist); using --max-inflight only
+2026-10-08T17:47:06 [small_a] SUBMIT      chunk=1/1 pages=1-3 mem=n/a
+2026-10-08T17:47:15 [small_a] CHUNK_DONE  chunk=1/1 pages=1-3 secs=9.1 sec_per_page=3.04 mem=n/a
+2026-10-08T17:47:15 [small_a] DOC_DONE    pages=3 chunks=1 secs=9.1 sec_per_page=3.04 output=outputs/small_a.json moved=completed/small_a.pdf
+2026-10-08T17:47:15 RUN_END     ok=1 failed=0 pages=3 secs=9.1 sec_per_page=3.04 restarts=n/a

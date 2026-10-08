@@ -1,0 +1,61 @@
+name: Release
+
+# Push a tag vX.Y.Z to release. The tag, __version__ in extract.py and a dated
+# "## [X.Y.Z] - YYYY-MM-DD" section in CHANGELOG.md must agree; the full CI must pass;
+# then a GitHub Release is created with that CHANGELOG section as its notes.
+
+on:
+  push:
+    tags: ["v*.*.*"]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Tag, version and changelog agree
+    runs-on: ubuntu-26.04
+    outputs:
+      version: ${{ steps.v.outputs.version }}
+    steps:
+      - uses: actions/checkout@v7
+      - id: v
+        run: |
+          tag=${GITHUB_REF_NAME#v}
+          code=$(python3 -c 'import re; print(re.search(r"__version__ = \"([^\"]+)\"", open("extract.py").read())[1])')
+          [ "$tag" = "$code" ] || { echo "::error::tag v$tag but extract.py __version__ is $code"; exit 1; }
+          echo "$tag" | grep -qE '^[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?$' \
+            || { echo "::error::$tag is not a semantic version"; exit 1; }
+          grep -qE "^## \[$tag\] - [0-9]{4}-[0-9]{2}-[0-9]{2}$" CHANGELOG.md \
+            || { echo "::error::CHANGELOG.md needs a dated '## [$tag] - YYYY-MM-DD' section (not 'Unreleased')"; exit 1; }
+          echo "version=$tag" >> "$GITHUB_OUTPUT"
+
+  ci:
+    needs: verify
+    uses: ./.github/workflows/ci.yml
+
+  release:
+    needs: [verify, ci]
+    runs-on: ubuntu-26.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+      - name: Release notes from CHANGELOG.md
+        env:
+          VERSION: ${{ needs.verify.outputs.version }}
+        run: |
+          awk -v v="$VERSION" '
+            $0 ~ "^## \\[" v "\\]" { on = 1; next }
+            on && /^## \[/ { exit }
+            on { print }' CHANGELOG.md \
+            | sed -E "s#\]\(([^):]+)\)#](https://github.com/$GITHUB_REPOSITORY/blob/v$VERSION/\1)#g" > notes.md
+          test -s notes.md
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ needs.verify.outputs.version }}
+        run: |
+          flags=()
+          case $VERSION in *-*) flags+=(--prerelease) ;; esac
+          gh release create "v$VERSION" --title "v$VERSION" --notes-file notes.md "${flags[@]}"

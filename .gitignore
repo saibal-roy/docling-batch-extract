@@ -1,0 +1,25 @@
+# Document data: never commit client or customer files.
+# inputs/ outputs/ completed/ errors/ logs/ tests/fixtures/ are kept as empty folders;
+# each has its own .gitignore that ignores everything inside except itself.
+*.pdf
+# ...except the public demo files (licensed for redistribution; see scripts/demo-files/README.md)
+!scripts/demo-files/*.pdf
+
+# Test working files (tests/results/ is kept as benchmark records)
+tests/work/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Local tool settings (may contain local paths and file names)
+.claude/
+.DS_Store
+
+# Site build output (scripts/build_site.py, mkdocs build)
+site-src/
+site/
+
+# Machine-specific sizing written by scripts/setup_ubuntu.sh (see .env.example)
+.env

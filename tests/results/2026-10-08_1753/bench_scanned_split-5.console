@@ -1,0 +1,20 @@
+2026-10-08T18:05:40 [scanned] DOC_START   doc=scanned.pdf pages=20 chunks=4 chunk_pages=5 scanned_pages=100% force_ocr=True size_mb=2.2
+2026-10-08T18:05:40 RUN_START   files=1 pages=20 chunks=4 max_inflight=2 chunk_pages=5 restarts=0
+2026-10-08T18:05:42 [scanned] SUBMIT      chunk=1/4 pages=1-5 mem=1.9/6.3GiB
+2026-10-08T18:05:42 [scanned] SUBMIT      chunk=2/4 pages=6-10 mem=1.9/6.3GiB
+2026-10-08T18:05:52 [scanned] PROGRESS    running=[#1(10s) #2(10s)] done=0/4 elapsed=10s mem=3.6/6.3GiB
+2026-10-08T18:06:02 [scanned] PROGRESS    running=[#1(20s) #2(20s)] done=0/4 elapsed=20s mem=3.5/6.3GiB
+2026-10-08T18:06:12 [scanned] PROGRESS    running=[#1(30s) #2(30s)] done=0/4 elapsed=30s mem=3.4/6.3GiB
+2026-10-08T18:06:22 [scanned] CHUNK_DONE  chunk=2/4 pages=6-10 secs=39.7 sec_per_page=7.95 mem=3.6/6.3GiB
+2026-10-08T18:06:22 [scanned] SUBMIT      chunk=3/4 pages=11-15 mem=3.6/6.3GiB
+2026-10-08T18:06:22 [scanned] CHUNK_DONE  chunk=1/4 pages=1-5 secs=39.8 sec_per_page=7.95 mem=3.6/6.3GiB
+2026-10-08T18:06:22 [scanned] SUBMIT      chunk=4/4 pages=16-20 mem=3.6/6.3GiB
+2026-10-08T18:06:24 [scanned] PROGRESS    running=[#3(2s) #4(2s)] done=2/4 elapsed=42s mem=2.8/6.3GiB
+2026-10-08T18:06:34 [scanned] PROGRESS    running=[#3(12s) #4(12s)] done=2/4 elapsed=52s mem=4.1/6.3GiB
+2026-10-08T18:06:44 [scanned] PROGRESS    running=[#3(22s) #4(22s)] done=2/4 elapsed=62s mem=3.6/6.3GiB
+2026-10-08T18:06:54 [scanned] PROGRESS    running=[#3(32s) #4(32s)] done=2/4 elapsed=72s mem=3.6/6.3GiB
+2026-10-08T18:07:04 [scanned] PROGRESS    running=[#3(42s) #4(42s)] done=2/4 elapsed=82s mem=4.3/6.3GiB
+2026-10-08T18:07:04 [scanned] CHUNK_DONE  chunk=4/4 pages=16-20 secs=42.7 sec_per_page=8.54 mem=4.3/6.3GiB
+2026-10-08T18:07:04 [scanned] CHUNK_DONE  chunk=3/4 pages=11-15 secs=42.7 sec_per_page=8.54 mem=4.3/6.3GiB
+2026-10-08T18:07:04 [scanned] DOC_DONE    pages=20 chunks=4 secs=82.5 sec_per_page=4.12 output=outputs/scanned.json moved=completed/scanned.pdf
+2026-10-08T18:07:04 RUN_END     ok=1 failed=0 pages=20 secs=82.5 sec_per_page=4.12 restarts=0

@@ -1,0 +1,26 @@
+/* Landing page: lay the four cards out 2 × 2 on wide screens, 1 column on phones. */
+.md-typeset .grid.cards {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr));
+}
+
+/* Accessibility (Lighthouse): links in running text must not rely on colour alone. */
+.md-typeset p a:not(.md-button),
+.md-typeset li a:not(.md-button),
+.md-typeset td a {
+  text-decoration: underline;
+}
+
+/* Contrast ≥ 4.5:1 for code comments and the footer. */
+[data-md-color-scheme="default"] {
+  --md-code-hl-comment-color: #57606a;
+}
+[data-md-color-scheme="slate"] {
+  --md-code-hl-comment-color: #a8b1bb;
+}
+.md-footer-meta .md-copyright {
+  color: var(--md-footer-fg-color);
+}
+/* Header tabs: the theme's 70 % opacity gives 4.28:1 on indigo; 90 % passes 4.5:1. */
+.md-tabs__link {
+  opacity: 0.9;
+}

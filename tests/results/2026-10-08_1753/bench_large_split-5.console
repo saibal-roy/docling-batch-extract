@@ -1,0 +1,46 @@
+2026-10-08T17:54:02 [large] DOC_START   doc=large.pdf pages=60 chunks=12 chunk_pages=5 scanned_pages=0% force_ocr=False size_mb=0.1
+2026-10-08T17:54:02 RUN_START   files=1 pages=60 chunks=12 max_inflight=2 chunk_pages=5 restarts=0
+2026-10-08T17:54:03 [large] SUBMIT      chunk=1/12 pages=1-5 mem=2.2/6.3GiB
+2026-10-08T17:54:03 [large] SUBMIT      chunk=2/12 pages=6-10 mem=2.2/6.3GiB
+2026-10-08T17:54:13 [large] PROGRESS    running=[#1(10s) #2(10s)] done=0/12 elapsed=10s mem=2.6/6.3GiB
+2026-10-08T17:54:23 [large] PROGRESS    running=[#1(20s) #2(20s)] done=0/12 elapsed=20s mem=2.5/6.3GiB
+2026-10-08T17:54:30 [large] CHUNK_DONE  chunk=1/12 pages=1-5 secs=27.7 sec_per_page=5.54 mem=2.1/6.3GiB
+2026-10-08T17:54:30 [large] SUBMIT      chunk=3/12 pages=11-15 mem=2.1/6.3GiB
+2026-10-08T17:54:34 [large] PROGRESS    running=[#2(32s) #3(4s)] done=1/12 elapsed=32s mem=2.1/6.3GiB
+2026-10-08T17:54:44 [large] PROGRESS    running=[#2(42s) #3(14s)] done=1/12 elapsed=42s mem=2.1/6.3GiB
+2026-10-08T17:54:49 [large] CHUNK_DONE  chunk=2/12 pages=6-10 secs=45.8 sec_per_page=9.15 mem=2.1/6.3GiB
+2026-10-08T17:54:49 [large] SUBMIT      chunk=4/12 pages=16-20 mem=2.1/6.3GiB
+2026-10-08T17:54:55 [large] PROGRESS    running=[#3(24s) #4(6s)] done=2/12 elapsed=52s mem=2.1/6.3GiB
+2026-10-08T17:55:05 [large] PROGRESS    running=[#3(34s) #4(16s)] done=2/12 elapsed=62s mem=2.2/6.3GiB
+2026-10-08T17:55:07 [large] CHUNK_DONE  chunk=3/12 pages=11-15 secs=36.2 sec_per_page=7.24 mem=2.2/6.3GiB
+2026-10-08T17:55:07 [large] SUBMIT      chunk=5/12 pages=21-25 mem=2.2/6.3GiB
+2026-10-08T17:55:15 [large] PROGRESS    running=[#4(26s) #5(8s)] done=3/12 elapsed=72s mem=2.2/6.3GiB
+2026-10-08T17:55:25 [large] PROGRESS    running=[#4(36s) #5(18s)] done=3/12 elapsed=82s mem=2.1/6.3GiB
+2026-10-08T17:55:28 [large] CHUNK_DONE  chunk=4/12 pages=16-20 secs=39.2 sec_per_page=7.85 mem=2.1/6.3GiB
+2026-10-08T17:55:28 [large] SUBMIT      chunk=6/12 pages=26-30 mem=2.1/6.3GiB
+2026-10-08T17:55:36 [large] PROGRESS    running=[#5(29s) #6(8s)] done=4/12 elapsed=93s mem=2.4/6.3GiB
+2026-10-08T17:55:46 [large] PROGRESS    running=[#5(39s) #6(18s)] done=4/12 elapsed=103s mem=2.1/6.3GiB
+2026-10-08T17:55:49 [large] CHUNK_DONE  chunk=5/12 pages=21-25 secs=42.3 sec_per_page=8.47 mem=2.1/6.3GiB
+2026-10-08T17:55:49 [large] SUBMIT      chunk=7/12 pages=31-35 mem=2.1/6.3GiB
+2026-10-08T17:55:57 [large] PROGRESS    running=[#6(29s) #7(8s)] done=5/12 elapsed=114s mem=2.3/6.3GiB
+2026-10-08T17:56:07 [large] PROGRESS    running=[#6(39s) #7(18s)] done=5/12 elapsed=124s mem=2.3/6.3GiB
+2026-10-08T17:56:13 [large] CHUNK_DONE  chunk=6/12 pages=26-30 secs=45.5 sec_per_page=9.10 mem=2.1/6.3GiB
+2026-10-08T17:56:13 [large] SUBMIT      chunk=8/12 pages=36-40 mem=2.1/6.3GiB
+2026-10-08T17:56:17 [large] PROGRESS    running=[#7(28s) #8(4s)] done=6/12 elapsed=135s mem=2.4/6.3GiB
+2026-10-08T17:56:23 [large] CHUNK_DONE  chunk=7/12 pages=31-35 secs=33.6 sec_per_page=6.72 mem=2.4/6.3GiB
+2026-10-08T17:56:23 [large] SUBMIT      chunk=9/12 pages=41-45 mem=2.4/6.3GiB
+2026-10-08T17:56:29 [large] PROGRESS    running=[#8(15s) #9(6s)] done=7/12 elapsed=146s mem=2.1/6.3GiB
+2026-10-08T17:56:38 [large] CHUNK_DONE  chunk=8/12 pages=36-40 secs=24.3 sec_per_page=4.85 mem=2.1/6.3GiB
+2026-10-08T17:56:38 [large] SUBMIT      chunk=10/12 pages=46-50 mem=2.1/6.3GiB
+2026-10-08T17:56:40 [large] PROGRESS    running=[#9(17s) #10(2s)] done=8/12 elapsed=157s mem=2.1/6.3GiB
+2026-10-08T17:56:44 [large] CHUNK_DONE  chunk=9/12 pages=41-45 secs=21.1 sec_per_page=4.23 mem=2.4/6.3GiB
+2026-10-08T17:56:44 [large] SUBMIT      chunk=11/12 pages=51-55 mem=2.4/6.3GiB
+2026-10-08T17:56:50 [large] PROGRESS    running=[#10(12s) #11(6s)] done=9/12 elapsed=167s mem=2.3/6.3GiB
+2026-10-08T17:57:00 [large] PROGRESS    running=[#10(22s) #11(16s)] done=9/12 elapsed=177s mem=2.3/6.3GiB
+2026-10-08T17:57:02 [large] CHUNK_DONE  chunk=10/12 pages=46-50 secs=24.2 sec_per_page=4.83 mem=2.1/6.3GiB
+2026-10-08T17:57:02 [large] SUBMIT      chunk=12/12 pages=56-60 mem=2.1/6.3GiB
+2026-10-08T17:57:05 [large] CHUNK_DONE  chunk=11/12 pages=51-55 secs=21.3 sec_per_page=4.25 mem=2.1/6.3GiB
+2026-10-08T17:57:11 [large] PROGRESS    running=[#12(9s)] done=11/12 elapsed=188s mem=2.2/6.3GiB
+2026-10-08T17:57:20 [large] CHUNK_DONE  chunk=12/12 pages=56-60 secs=18.1 sec_per_page=3.62 mem=2.0/6.3GiB
+2026-10-08T17:57:20 [large] DOC_DONE    pages=60 chunks=12 secs=197.1 sec_per_page=3.28 output=outputs/large.json moved=completed/large.pdf
+2026-10-08T17:57:20 RUN_END     ok=1 failed=0 pages=60 secs=197.1 sec_per_page=3.28 restarts=0

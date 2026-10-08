@@ -1,0 +1,12 @@
+2026-10-08T18:08:25 [scanned] DOC_START   doc=scanned.pdf pages=20 chunks=1 chunk_pages=0 scanned_pages=100% force_ocr=True size_mb=2.2
+2026-10-08T18:08:25 RUN_START   files=1 pages=20 chunks=1 max_inflight=2 chunk_pages=5 restarts=0
+2026-10-08T18:08:26 [scanned] SUBMIT      chunk=1/1 pages=1-20 mem=2.5/6.3GiB
+2026-10-08T18:08:36 [scanned] PROGRESS    running=[#1(10s)] done=0/1 elapsed=10s mem=3.6/6.3GiB
+2026-10-08T18:08:46 [scanned] PROGRESS    running=[#1(20s)] done=0/1 elapsed=20s mem=3.6/6.3GiB
+2026-10-08T18:08:56 [scanned] PROGRESS    running=[#1(30s)] done=0/1 elapsed=30s mem=3.6/6.3GiB
+2026-10-08T18:09:06 [scanned] PROGRESS    running=[#1(40s)] done=0/1 elapsed=40s mem=3.3/6.3GiB
+2026-10-08T18:09:16 [scanned] PROGRESS    running=[#1(50s)] done=0/1 elapsed=50s mem=3.4/6.3GiB
+2026-10-08T18:09:26 [scanned] PROGRESS    running=[#1(60s)] done=0/1 elapsed=60s mem=3.4/6.3GiB
+2026-10-08T18:09:36 [scanned] CHUNK_DONE  chunk=1/1 pages=1-20 secs=69.6 sec_per_page=3.48 mem=3.4/6.3GiB
+2026-10-08T18:09:36 [scanned] DOC_DONE    pages=20 chunks=1 secs=69.6 sec_per_page=3.48 output=outputs/scanned.json moved=completed/scanned.pdf
+2026-10-08T18:09:36 RUN_END     ok=1 failed=0 pages=20 secs=69.6 sec_per_page=3.48 restarts=0

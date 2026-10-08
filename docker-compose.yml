@@ -1,0 +1,30 @@
+# Fixed project name: every checkout (any folder name) manages the same container.
+name: docling-batch-extract
+
+services:
+  docling-serve:
+    # CPU-only image variant: no CUDA libraries, smaller download and footprint
+    # Pinned stable CPU release (maintenance policy: exact tags only, upgraded deliberately).
+    image: ghcr.io/docling-project/docling-serve-cpu:${DOCLING_TAG:-v1.36.0}
+    container_name: docling_ocr_worker_cpu
+    restart: always
+    ports:
+      # Loopback only: reachable from this machine (extract.py), never from the network,
+      # even if a firewall or cloud security group is misconfigured. The API has no authentication.
+      - "127.0.0.1:5001:5001"
+    environment:
+      - DOCLING_SERVE_ENG_KIND=local
+      - DOCLING_SERVE_LOG_LEVEL=INFO
+      - DOCLING_SERVE_ENABLE_UI=0
+      - UVICORN_WORKERS=1
+      # Sizing comes from .env (written by scripts/setup_ubuntu.sh for this machine's CPUs/RAM).
+      # Defaults = the validated 2 vCPU / 8 GB target: 1 worker × 2 threads (fastest on scanned PDFs with
+      # v1.36.0; see README benchmarks). extract.py reads the worker count from the container.
+      - DOCLING_SERVE_ENG_LOC_NUM_WORKERS=${DOCLING_WORKERS:-1}
+      - DOCLING_NUM_THREADS=${DOCLING_THREADS:-2}
+      - OMP_NUM_THREADS=${DOCLING_THREADS:-2}
+      - MKL_NUM_THREADS=${DOCLING_THREADS:-2}
+    deploy:
+      resources:
+        limits:
+          memory: ${DOCLING_MEMORY:-6500M}

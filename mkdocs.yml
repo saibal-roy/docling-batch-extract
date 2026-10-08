@@ -1,0 +1,104 @@
+site_name: docling-batch-extract
+site_description: Batch PDF → Markdown for RAG on one CPU-only server, with docling-serve. Built and documented with Claude.
+site_url: https://saibal-roy.github.io/docling-batch-extract/
+site_author: Saibal Roy
+repo_url: https://github.com/saibal-roy/docling-batch-extract
+repo_name: saibal-roy/docling-batch-extract
+edit_uri: ""
+copyright: '&copy; 2026 <a href="https://www.saibalroy.com/">Saibal Roy</a> · MIT License · demo PDF under CC BY 4.0'
+
+# The site source is assembled from the repository's Markdown by scripts/build_site.py.
+docs_dir: site-src
+hooks:
+  - docs/hooks.py
+extra_css:
+  - stylesheets/extra.css
+extra_javascript:
+  - javascripts/a11y.js
+
+theme:
+  name: material
+  font: false   # system fonts: no Google Fonts request (faster, no third-party calls)
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  icon:
+    repo: fontawesome/brands/github
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      # GitHub-style heading anchors, so the README's own #links work on the site too.
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.superfences
+
+validation:
+  nav:
+    omitted_files: info
+  links:
+    not_found: warn
+    anchors: warn
+    unrecognized_links: warn
+
+nav:
+  - Home: index.md
+  - Guide: guide.md
+  - Validation: tests/results/index.md
+  - Design history:
+      - versions/index.md
+      - Plan v7: versions/plan-v7.md
+      - Plan v6: versions/plan-v6.md
+      - Plan v5: versions/plan-v5.md
+      - Plan v4: versions/plan-v4.md
+      - Plan v3: versions/plan-v3.md
+      - Plan v2: versions/plan-v2.md
+      - Plan v1: versions/plan-v1.md
+      - "Proposal: S3 Files inputs": versions/proposal-s3-files-inputs.md
+      - Landing page v2: versions/landing-page-plan-v2.md
+      - Landing page v1: versions/landing-page-plan-v1.md
+  - Build story: STORY.md
+  - Prompts: prompts.md
+  - License: license.md
+
+extra:
+  social:
+    - icon: material/web
+      link: https://www.saibalroy.com/
+      name: Saibal Roy, website
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/roysaibal
+      name: Saibal Roy on LinkedIn
+    - icon: fontawesome/brands/github
+      link: https://github.com/saibal-roy
+      name: saibal-roy on GitHub

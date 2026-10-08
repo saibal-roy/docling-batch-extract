@@ -1,0 +1,7 @@
+line-length = 120
+target-version = "py310"
+
+[lint]
+# pycodestyle errors/warnings, pyflakes, import order, bugbear.
+# Broad `except Exception` is intentional in extract.py: one bad PDF or a docker hiccup must not stop a batch.
+select = ["E", "W", "F", "I", "B"]

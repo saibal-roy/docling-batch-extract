@@ -1,0 +1,20 @@
+2026-10-08T19:03:23 [medium] DOC_START   doc=medium.pdf pages=15 chunks=3 chunk_pages=5 scanned_pages=0% force_ocr=False size_mb=0.0
+2026-10-08T19:03:23 [small_a] DOC_START   doc=small_a.pdf pages=3 chunks=1 chunk_pages=5 scanned_pages=0% force_ocr=False size_mb=0.0
+2026-10-08T19:03:23 [small_b] DOC_START   doc=small_b.pdf pages=5 chunks=1 chunk_pages=5 scanned_pages=0% force_ocr=False size_mb=0.0
+2026-10-08T19:03:23 RUN_START   files=3 pages=23 chunks=5 max_inflight=2 chunk_pages=5 restarts=0
+2026-10-08T19:03:24 THROTTLE    on mem=2.5/6.3GiB
+2026-10-08T19:03:24 [medium] SUBMIT      chunk=1/3 pages=1-5 mem=2.5/6.3GiB
+2026-10-08T19:03:36 [medium] CHUNK_DONE  chunk=1/3 pages=1-5 secs=12.1 sec_per_page=2.42 mem=2.7/6.3GiB
+2026-10-08T19:03:36 [medium] SUBMIT      chunk=2/3 pages=6-10 mem=2.7/6.3GiB
+2026-10-08T19:03:48 [medium] CHUNK_DONE  chunk=2/3 pages=6-10 secs=12.1 sec_per_page=2.43 mem=2.7/6.3GiB
+2026-10-08T19:03:48 [medium] SUBMIT      chunk=3/3 pages=11-15 mem=2.7/6.3GiB
+2026-10-08T19:03:55 [medium] PROGRESS    running=[#3(6s)] done=2/3 elapsed=30s mem=2.8/6.3GiB
+2026-10-08T19:04:01 [medium] CHUNK_DONE  chunk=3/3 pages=11-15 secs=12.2 sec_per_page=2.43 mem=2.7/6.3GiB
+2026-10-08T19:04:01 [medium] DOC_DONE    pages=15 chunks=3 secs=36.4 sec_per_page=2.43 output=outputs/medium.json moved=completed/medium.pdf
+2026-10-08T19:04:01 [small_a] SUBMIT      chunk=1/1 pages=1-3 mem=2.7/6.3GiB
+2026-10-08T19:04:10 [small_a] CHUNK_DONE  chunk=1/1 pages=1-3 secs=9.1 sec_per_page=3.04 mem=2.7/6.3GiB
+2026-10-08T19:04:10 [small_a] DOC_DONE    pages=3 chunks=1 secs=9.1 sec_per_page=3.04 output=outputs/small_a.json moved=completed/small_a.pdf
+2026-10-08T19:04:10 [small_b] SUBMIT      chunk=1/1 pages=1-5 mem=2.7/6.3GiB
+2026-10-08T19:04:22 [small_b] CHUNK_DONE  chunk=1/1 pages=1-5 secs=12.1 sec_per_page=2.43 mem=2.7/6.3GiB
+2026-10-08T19:04:22 [small_b] DOC_DONE    pages=5 chunks=1 secs=12.1 sec_per_page=2.43 output=outputs/small_b.json moved=completed/small_b.pdf
+2026-10-08T19:04:22 RUN_END     ok=3 failed=0 pages=23 secs=57.7 sec_per_page=2.51 restarts=0

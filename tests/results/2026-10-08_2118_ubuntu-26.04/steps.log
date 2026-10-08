@@ -1,0 +1,892 @@
+Unable to find image 'ubuntu:26.04' locally
+26.04: Pulling from library/ubuntu
+Digest: sha256:f144425ff09be612d6d9ad965196e9cdc23dae1f42110a8a11a3e9a8198759f7
+Status: Downloaded newer image for ubuntu:26.04
+
+######## Prepare: sudo user 'ops', copy of the repository (no local venv, data or tool settings)
+
+######## 1. setup_ubuntu.sh
+
+==> Checking the system
+Ubuntu 26.04 · 2 CPUs · 7.7 GB RAM · 24 GB free disk · aarch64
+WARNING: 4 CPUs recommended (container runs 2 workers x 2 threads)
+
+==> Installing packages (Docker Engine, Python venv, flock)
+Hit:1 http://ports.ubuntu.com/ubuntu-ports resolute InRelease
+Hit:2 http://ports.ubuntu.com/ubuntu-ports resolute-updates InRelease
+Hit:3 http://ports.ubuntu.com/ubuntu-ports resolute-backports InRelease
+Hit:4 http://ports.ubuntu.com/ubuntu-ports resolute-security InRelease
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+ca-certificates is already the newest version (20260601~26.04.1).
+ca-certificates set to manually installed.
+Solving dependencies...
+The following additional packages will be installed:
+  bash-completion krb5-locales libbrotli1 libcurl4t64 libgnutls30t64
+  libgssapi-krb5-2 libhogweed6t64 libidn2-0 libk5crypto3 libkeyutils1
+  libkrb5-3 libkrb5support0 libldap-common libldap2 libnettle8t64
+  libnghttp2-14 libp11-kit0 libpsl5t64 librtmp1 libsasl2-2 libsasl2-modules
+  libsasl2-modules-db libssh2-1t64 libtasn1-6 libunistring5 publicsuffix
+Suggested packages:
+  gnutls-bin krb5-doc krb5-user libsasl2-modules-gssapi-mit
+  | libsasl2-modules-gssapi-heimdal libsasl2-modules-ldap libsasl2-modules-otp
+  libsasl2-modules-sql
+The following NEW packages will be installed:
+  bash-completion curl krb5-locales libbrotli1 libcurl4t64 libgnutls30t64
+  libgssapi-krb5-2 libhogweed6t64 libidn2-0 libk5crypto3 libkeyutils1
+  libkrb5-3 libkrb5support0 libldap-common libldap2 libnettle8t64
+  libnghttp2-14 libp11-kit0 libpsl5t64 librtmp1 libsasl2-2 libsasl2-modules
+  libsasl2-modules-db libssh2-1t64 libtasn1-6 libunistring5 publicsuffix
+0 upgraded, 27 newly installed, 0 to remove and 2 not upgraded.
+Need to get 5094 kB of archives.
+After this operation, 18.0 MB of additional disk space will be used.
+Get:1 http://ports.ubuntu.com/ubuntu-ports resolute-updates/main arm64 krb5-locales all 1.22.1-2ubuntu4.1 [13.6 kB]
+Get:2 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 libnettle8t64 arm64 3.10.2-1 [190 kB]
+Get:3 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 libhogweed6t64 arm64 3.10.2-1 [200 kB]
+Get:4 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 libunistring5 arm64 1.3-2build1 [601 kB]
+Get:5 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 libidn2-0 arm64 2.3.8-4build1 [68.3 kB]
+Get:6 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 libp11-kit0 arm64 0.26.2-2 [306 kB]
+Get:7 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 libtasn1-6 arm64 4.21.0-2 [44.4 kB]
+Get:8 http://ports.ubuntu.com/ubuntu-ports resolute-updates/main arm64 libgnutls30t64 arm64 3.8.12-2ubuntu1.1 [957 kB]
+Get:9 http://ports.ubuntu.com/ubuntu-ports resolute-updates/main arm64 libkrb5support0 arm64 1.22.1-2ubuntu4.1 [33.5 kB]
+Get:10 http://ports.ubuntu.com/ubuntu-ports resolute-updates/main arm64 libk5crypto3 arm64 1.22.1-2ubuntu4.1 [82.2 kB]
+Get:11 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 libkeyutils1 arm64 1.6.3-6ubuntu3 [10.8 kB]
+Get:12 http://ports.ubuntu.com/ubuntu-ports resolute-updates/main arm64 libkrb5-3 arm64 1.22.1-2ubuntu4.1 [357 kB]
+Get:13 http://ports.ubuntu.com/ubuntu-ports resolute-updates/main arm64 libgssapi-krb5-2 arm64 1.22.1-2ubuntu4.1 [144 kB]
+Get:14 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 bash-completion all 1:2.16.0-8build1 [214 kB]
+Get:15 http://ports.ubuntu.com/ubuntu-ports resolute-updates/main arm64 libnghttp2-14 arm64 1.68.0-2ubuntu0.2 [70.7 kB]
+Get:16 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 libpsl5t64 arm64 0.21.2-1.1build2 [59.7 kB]
+Get:17 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 publicsuffix all 20260129.1928-1 [139 kB]
+Get:18 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 libbrotli1 arm64 1.2.0-3build1 [345 kB]
+Get:19 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 libsasl2-modules-db arm64 2.1.28+dfsg1-9ubuntu3 [21.6 kB]
+Get:20 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 libsasl2-2 arm64 2.1.28+dfsg1-9ubuntu3 [53.7 kB]
+Get:21 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 libldap-common all 2.6.10+dfsg-1ubuntu5 [36.0 kB]
+Get:22 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 libldap2 arm64 2.6.10+dfsg-1ubuntu5 [200 kB]
+Get:23 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 librtmp1 arm64 2.4+20151223.gitfa8646d.1-3 [58.7 kB]
+Get:24 http://ports.ubuntu.com/ubuntu-ports resolute-updates/main arm64 libssh2-1t64 arm64 1.11.1-1ubuntu0.26.04.4 [134 kB]
+Get:25 http://ports.ubuntu.com/ubuntu-ports resolute-updates/main arm64 libcurl4t64 arm64 8.18.0-1ubuntu2.7 [415 kB]
+Get:26 http://ports.ubuntu.com/ubuntu-ports resolute-updates/main arm64 curl arm64 8.18.0-1ubuntu2.7 [268 kB]
+Get:27 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 libsasl2-modules arm64 2.1.28+dfsg1-9ubuntu3 [70.0 kB]
+debconf: unable to initialize frontend: Dialog
+debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC entries checked: /etc/perl /usr/local/lib/aarch64-linux-gnu/perl/5.40.1 /usr/local/share/perl/5.40.1 /usr/lib/aarch64-linux-gnu/perl5/5.40 /usr/share/perl5 /usr/lib/aarch64-linux-gnu/perl-base /usr/lib/aarch64-linux-gnu/perl/5.40 /usr/share/perl/5.40 /usr/local/lib/site_perl) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 8, <STDIN> line 27.)
+debconf: falling back to frontend: Teletype
+debconf: unable to initialize frontend: Teletype
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Noninteractive
+Fetched 5094 kB in 4s (1234 kB/s)
+Selecting previously unselected package krb5-locales.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9825 files and directories currently installed.)
+Preparing to unpack .../00-krb5-locales_1.22.1-2ubuntu4.1_all.deb ...
+Unpacking krb5-locales (1.22.1-2ubuntu4.1) ...
+Selecting previously unselected package libnettle8t64:arm64.
+Preparing to unpack .../01-libnettle8t64_3.10.2-1_arm64.deb ...
+Unpacking libnettle8t64:arm64 (3.10.2-1) ...
+Selecting previously unselected package libhogweed6t64:arm64.
+Preparing to unpack .../02-libhogweed6t64_3.10.2-1_arm64.deb ...
+Unpacking libhogweed6t64:arm64 (3.10.2-1) ...
+Selecting previously unselected package libunistring5:arm64.
+Preparing to unpack .../03-libunistring5_1.3-2build1_arm64.deb ...
+Unpacking libunistring5:arm64 (1.3-2build1) ...
+Selecting previously unselected package libidn2-0:arm64.
+Preparing to unpack .../04-libidn2-0_2.3.8-4build1_arm64.deb ...
+Unpacking libidn2-0:arm64 (2.3.8-4build1) ...
+Selecting previously unselected package libp11-kit0:arm64.
+Preparing to unpack .../05-libp11-kit0_0.26.2-2_arm64.deb ...
+Unpacking libp11-kit0:arm64 (0.26.2-2) ...
+Selecting previously unselected package libtasn1-6:arm64.
+Preparing to unpack .../06-libtasn1-6_4.21.0-2_arm64.deb ...
+Unpacking libtasn1-6:arm64 (4.21.0-2) ...
+Selecting previously unselected package libgnutls30t64:arm64.
+Preparing to unpack .../07-libgnutls30t64_3.8.12-2ubuntu1.1_arm64.deb ...
+Unpacking libgnutls30t64:arm64 (3.8.12-2ubuntu1.1) ...
+Selecting previously unselected package libkrb5support0:arm64.
+Preparing to unpack .../08-libkrb5support0_1.22.1-2ubuntu4.1_arm64.deb ...
+Unpacking libkrb5support0:arm64 (1.22.1-2ubuntu4.1) ...
+Selecting previously unselected package libk5crypto3:arm64.
+Preparing to unpack .../09-libk5crypto3_1.22.1-2ubuntu4.1_arm64.deb ...
+Unpacking libk5crypto3:arm64 (1.22.1-2ubuntu4.1) ...
+Selecting previously unselected package libkeyutils1:arm64.
+Preparing to unpack .../10-libkeyutils1_1.6.3-6ubuntu3_arm64.deb ...
+Unpacking libkeyutils1:arm64 (1.6.3-6ubuntu3) ...
+Selecting previously unselected package libkrb5-3:arm64.
+Preparing to unpack .../11-libkrb5-3_1.22.1-2ubuntu4.1_arm64.deb ...
+Unpacking libkrb5-3:arm64 (1.22.1-2ubuntu4.1) ...
+Selecting previously unselected package libgssapi-krb5-2:arm64.
+Preparing to unpack .../12-libgssapi-krb5-2_1.22.1-2ubuntu4.1_arm64.deb ...
+Unpacking libgssapi-krb5-2:arm64 (1.22.1-2ubuntu4.1) ...
+Selecting previously unselected package bash-completion.
+Preparing to unpack .../13-bash-completion_1%3a2.16.0-8build1_all.deb ...
+Unpacking bash-completion (1:2.16.0-8build1) ...
+Selecting previously unselected package libnghttp2-14:arm64.
+Preparing to unpack .../14-libnghttp2-14_1.68.0-2ubuntu0.2_arm64.deb ...
+Unpacking libnghttp2-14:arm64 (1.68.0-2ubuntu0.2) ...
+Selecting previously unselected package libpsl5t64:arm64.
+Preparing to unpack .../15-libpsl5t64_0.21.2-1.1build2_arm64.deb ...
+Unpacking libpsl5t64:arm64 (0.21.2-1.1build2) ...
+Selecting previously unselected package publicsuffix.
+Preparing to unpack .../16-publicsuffix_20260129.1928-1_all.deb ...
+Unpacking publicsuffix (20260129.1928-1) ...
+Selecting previously unselected package libbrotli1:arm64.
+Preparing to unpack .../17-libbrotli1_1.2.0-3build1_arm64.deb ...
+Unpacking libbrotli1:arm64 (1.2.0-3build1) ...
+Selecting previously unselected package libsasl2-modules-db:arm64.
+Preparing to unpack .../18-libsasl2-modules-db_2.1.28+dfsg1-9ubuntu3_arm64.deb ...
+Unpacking libsasl2-modules-db:arm64 (2.1.28+dfsg1-9ubuntu3) ...
+Selecting previously unselected package libsasl2-2:arm64.
+Preparing to unpack .../19-libsasl2-2_2.1.28+dfsg1-9ubuntu3_arm64.deb ...
+Unpacking libsasl2-2:arm64 (2.1.28+dfsg1-9ubuntu3) ...
+Selecting previously unselected package libldap-common.
+Preparing to unpack .../20-libldap-common_2.6.10+dfsg-1ubuntu5_all.deb ...
+Unpacking libldap-common (2.6.10+dfsg-1ubuntu5) ...
+Selecting previously unselected package libldap2:arm64.
+Preparing to unpack .../21-libldap2_2.6.10+dfsg-1ubuntu5_arm64.deb ...
+Unpacking libldap2:arm64 (2.6.10+dfsg-1ubuntu5) ...
+Selecting previously unselected package librtmp1:arm64.
+Preparing to unpack .../22-librtmp1_2.4+20151223.gitfa8646d.1-3_arm64.deb ...
+Unpacking librtmp1:arm64 (2.4+20151223.gitfa8646d.1-3) ...
+Selecting previously unselected package libssh2-1t64:arm64.
+Preparing to unpack .../23-libssh2-1t64_1.11.1-1ubuntu0.26.04.4_arm64.deb ...
+Unpacking libssh2-1t64:arm64 (1.11.1-1ubuntu0.26.04.4) ...
+Selecting previously unselected package libcurl4t64:arm64.
+Preparing to unpack .../24-libcurl4t64_8.18.0-1ubuntu2.7_arm64.deb ...
+Unpacking libcurl4t64:arm64 (8.18.0-1ubuntu2.7) ...
+Selecting previously unselected package curl.
+Preparing to unpack .../25-curl_8.18.0-1ubuntu2.7_arm64.deb ...
+Unpacking curl (8.18.0-1ubuntu2.7) ...
+Selecting previously unselected package libsasl2-modules:arm64.
+Preparing to unpack .../26-libsasl2-modules_2.1.28+dfsg1-9ubuntu3_arm64.deb ...
+Unpacking libsasl2-modules:arm64 (2.1.28+dfsg1-9ubuntu3) ...
+Setting up libkeyutils1:arm64 (1.6.3-6ubuntu3) ...
+Setting up libbrotli1:arm64 (1.2.0-3build1) ...
+Setting up libsasl2-modules:arm64 (2.1.28+dfsg1-9ubuntu3) ...
+Setting up libnghttp2-14:arm64 (1.68.0-2ubuntu0.2) ...
+Setting up krb5-locales (1.22.1-2ubuntu4.1) ...
+Setting up libldap-common (2.6.10+dfsg-1ubuntu5) ...
+Setting up libkrb5support0:arm64 (1.22.1-2ubuntu4.1) ...
+Setting up libsasl2-modules-db:arm64 (2.1.28+dfsg1-9ubuntu3) ...
+Setting up libnettle8t64:arm64 (3.10.2-1) ...
+Setting up bash-completion (1:2.16.0-8build1) ...
+Setting up libp11-kit0:arm64 (0.26.2-2) ...
+Setting up libunistring5:arm64 (1.3-2build1) ...
+Setting up libk5crypto3:arm64 (1.22.1-2ubuntu4.1) ...
+Setting up libsasl2-2:arm64 (2.1.28+dfsg1-9ubuntu3) ...
+Setting up libhogweed6t64:arm64 (3.10.2-1) ...
+Setting up libtasn1-6:arm64 (4.21.0-2) ...
+Setting up libkrb5-3:arm64 (1.22.1-2ubuntu4.1) ...
+Setting up libssh2-1t64:arm64 (1.11.1-1ubuntu0.26.04.4) ...
+Setting up publicsuffix (20260129.1928-1) ...
+Setting up libldap2:arm64 (2.6.10+dfsg-1ubuntu5) ...
+Setting up libidn2-0:arm64 (2.3.8-4build1) ...
+Setting up libgssapi-krb5-2:arm64 (1.22.1-2ubuntu4.1) ...
+Setting up libgnutls30t64:arm64 (3.8.12-2ubuntu1.1) ...
+Setting up libpsl5t64:arm64 (0.21.2-1.1build2) ...
+Setting up librtmp1:arm64 (2.4+20151223.gitfa8646d.1-3) ...
+Setting up libcurl4t64:arm64 (8.18.0-1ubuntu2.7) ...
+Setting up curl (8.18.0-1ubuntu2.7) ...
+Processing triggers for libc-bin (2.43-2ubuntu2.4) ...
+Get:1 https://download.docker.com/linux/ubuntu resolute InRelease [32.5 kB]
+Get:2 https://download.docker.com/linux/ubuntu resolute/stable arm64 Packages [29.3 kB]
+Hit:3 http://ports.ubuntu.com/ubuntu-ports resolute InRelease
+Hit:4 http://ports.ubuntu.com/ubuntu-ports resolute-updates InRelease
+Hit:5 http://ports.ubuntu.com/ubuntu-ports resolute-backports InRelease
+Hit:6 http://ports.ubuntu.com/ubuntu-ports resolute-security InRelease
+Fetched 61.8 kB in 1s (42.1 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Solving dependencies...
+The following additional packages will be installed:
+  adduser apparmor dbus dbus-bin dbus-daemon dbus-session-bus-common
+  dbus-system-bus-common dbus-user-session dmsetup docker-ce-rootless-extras
+  git git-man iptables less libcbor0.10 libcryptsetup12 libcurl3t64-gnutls
+  libdbus-1-3 libdevmapper1.02.1 libedit2 liberror-perl libfido2-1
+  libgdbm-compat4t64 libgdbm6t64 libip4tc2 libip6tc2 libjansson4 libjson-c5
+  libkmod2 libmnl0 libnetfilter-conntrack3 libnfnetlink0 libnftables1
+  libnftnl11 libnss-systemd libpam-systemd libperl5.40 libsystemd-shared
+  libx11-6 libx11-data libxau6 libxcb1 libxdmcp6 libxext6 libxmuu1
+  libxtables12 linux-sysctl-defaults nftables openssh-client patch perl
+  perl-modules-5.40 pigz systemd systemd-cryptsetup systemd-resolved
+  systemd-sysv systemd-timesyncd xauth xz-utils
+Suggested packages:
+  liblocale-gettext-perl cron quota ecryptfs-utils apparmor-profiles-extra
+  apparmor-utils cgroupfs-mount | cgroup-lite docker-model-plugin gettext-base
+  git-doc git-email git-gui gitk gitweb git-cvs git-svn firewalld kmod
+  gdbm-l10n libtss2-esys-3.0.2-0t64 libtss2-mu-4.0.1-0t64 libtss2-rc0t64
+  systemd-userdbd libarchive13t64 libbpf1 libdw1t64 libelf1t64 libpwquality1
+  libqrencode4 keychain libpam-ssh monkeysphere ssh-askpass ed diffutils-doc
+  perl-doc libterm-readline-gnu-perl | libterm-readline-perl-perl make
+  libtap-harness-archive-perl systemd-container systemd-homed systemd-boot
+  systemd-repart libtss2-tcti-device0 polkitd
+The following NEW packages will be installed:
+  adduser apparmor containerd.io dbus dbus-bin dbus-daemon
+  dbus-session-bus-common dbus-system-bus-common dbus-user-session dmsetup
+  docker-buildx-plugin docker-ce docker-ce-cli docker-ce-rootless-extras
+  docker-compose-plugin git git-man iptables less libcbor0.10 libcryptsetup12
+  libcurl3t64-gnutls libdbus-1-3 libdevmapper1.02.1 libedit2 liberror-perl
+  libfido2-1 libgdbm-compat4t64 libgdbm6t64 libip4tc2 libip6tc2 libjansson4
+  libjson-c5 libkmod2 libmnl0 libnetfilter-conntrack3 libnfnetlink0
+  libnftables1 libnftnl11 libnss-systemd libpam-systemd libperl5.40
+  libsystemd-shared libx11-6 libx11-data libxau6 libxcb1 libxdmcp6 libxext6
+  libxmuu1 libxtables12 linux-sysctl-defaults nftables openssh-client patch
+  perl perl-modules-5.40 pigz systemd systemd-cryptsetup systemd-resolved
+  systemd-sysv systemd-timesyncd xauth xz-utils
+0 upgraded, 65 newly installed, 0 to remove and 2 not upgraded.
+Need to get 114 MB of archives.
+After this operation, 499 MB of additional disk space will be used.
+Get:1 https://download.docker.com/linux/ubuntu resolute/stable arm64 containerd.io arm64 2.3.6-1~ubuntu.26.04~resolute [19.6 MB]
+Get:2 http://ports.ubuntu.com/ubuntu-ports resolute-updates/main arm64 libsystemd-shared arm64 259.5-0ubuntu3.4 [2379 kB]
+Get:3 http://ports.ubuntu.com/ubuntu-ports resolute-updates/main arm64 systemd arm64 259.5-0ubuntu3.4 [3070 kB]
+Get:4 https://download.docker.com/linux/ubuntu resolute/stable arm64 docker-ce-cli arm64 5:29.8.2-1~ubuntu.26.04~resolute [15.8 MB]
+Get:5 http://ports.ubuntu.com/ubuntu-ports resolute-updates/main arm64 systemd-sysv arm64 259.5-0ubuntu3.4 [9250 B]
+Get:6 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 libip4tc2 arm64 1.8.11-2ubuntu3 [24.3 kB]
+Get:7 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 libip6tc2 arm64 1.8.11-2ubuntu3 [24.7 kB]
+Get:8 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 libxtables12 arm64 1.8.11-2ubuntu3 [36.7 kB]
+Get:9 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 libmnl0 arm64 1.0.5-3build1 [12.4 kB]
+Get:10 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 libnfnetlink0 arm64 1.0.2-3build1 [14.6 kB]
+Get:11 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 libnetfilter-conntrack3 arm64 1.1.1-1 [47.3 kB]
+Get:12 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 libnftnl11 arm64 1.3.1-1 [70.7 kB]
+Get:13 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 iptables arm64 1.8.11-2ubuntu3 [386 kB]
+Get:14 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 libjansson4 arm64 2.14-2build4 [34.6 kB]
+Get:15 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 libnftables1 arm64 1.1.6-1 [379 kB]
+Get:16 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 libedit2 arm64 3.1-20251016-1 [96.3 kB]
+Get:17 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 nftables arm64 1.1.6-1 [76.4 kB]
+Get:18 http://ports.ubuntu.com/ubuntu-ports resolute/universe arm64 pigz arm64 2.8-1build1 [61.8 kB]
+Get:19 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 adduser all 3.153ubuntu1 [194 kB]
+Get:20 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 libdbus-1-3 arm64 1.16.2-2ubuntu4 [184 kB]
+Get:21 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 dbus-bin arm64 1.16.2-2ubuntu4 [39.0 kB]
+Get:22 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 dbus-session-bus-common all 1.16.2-2ubuntu4 [54.5 kB]
+Get:23 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 dbus-daemon arm64 1.16.2-2ubuntu4 [114 kB]
+Get:24 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 dbus-system-bus-common all 1.16.2-2ubuntu4 [55.9 kB]
+Get:25 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 dbus arm64 1.16.2-2ubuntu4 [23.8 kB]
+Get:26 http://ports.ubuntu.com/ubuntu-ports resolute-updates/main arm64 libpam-systemd arm64 259.5-0ubuntu3.4 [268 kB]
+Get:27 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 dbus-user-session arm64 1.16.2-2ubuntu4 [9682 B]
+Get:28 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 libdevmapper1.02.1 arm64 2:1.02.205-2ubuntu3 [131 kB]
+Get:29 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 dmsetup arm64 2:1.02.205-2ubuntu3 [74.8 kB]
+Get:30 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 less arm64 668-1build1 [171 kB]
+Get:31 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 libjson-c5 arm64 0.18+ds-3 [35.9 kB]
+Get:32 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 libcryptsetup12 arm64 2:2.8.4-1ubuntu4 [262 kB]
+Get:33 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 libkmod2 arm64 34.2-2ubuntu2 [50.6 kB]
+Get:34 http://ports.ubuntu.com/ubuntu-ports resolute-updates/main arm64 libnss-systemd arm64 259.5-0ubuntu3.4 [222 kB]
+Get:35 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 linux-sysctl-defaults all 4.15ubuntu5 [6208 B]
+Get:36 http://ports.ubuntu.com/ubuntu-ports resolute-updates/main arm64 systemd-cryptsetup arm64 259.5-0ubuntu3.4 [122 kB]
+Get:37 http://ports.ubuntu.com/ubuntu-ports resolute-updates/main arm64 systemd-resolved arm64 259.5-0ubuntu3.4 [291 kB]
+Get:38 http://ports.ubuntu.com/ubuntu-ports resolute-updates/main arm64 apparmor arm64 5.0.2-0ubuntu1~26.04.1 [364 kB]
+Get:39 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 libcbor0.10 arm64 0.10.2-2ubuntu3 [25.2 kB]
+Get:40 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 libfido2-1 arm64 1.16.0-2build1 [83.1 kB]
+Get:41 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 libgdbm6t64 arm64 1.26-1build1 [36.1 kB]
+Get:42 https://download.docker.com/linux/ubuntu resolute/stable arm64 docker-ce arm64 5:29.8.2-1~ubuntu.26.04~resolute [20.9 MB]
+Get:43 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 libxau6 arm64 1:1.0.11-1build2 [7644 B]
+Get:44 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 libxdmcp6 arm64 1:1.1.5-2 [10.9 kB]
+Get:45 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 libxcb1 arm64 1.17.0-2ubuntu1 [49.2 kB]
+Get:46 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 libx11-data all 2:1.8.13-1 [114 kB]
+Get:47 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 libx11-6 arm64 2:1.8.13-1 [652 kB]
+Get:48 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 libxext6 arm64 2:1.3.4-1build3 [30.2 kB]
+Get:49 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 libxmuu1 arm64 2:1.1.3-4 [9368 B]
+Get:50 http://ports.ubuntu.com/ubuntu-ports resolute-updates/main arm64 openssh-client arm64 1:10.2p1-2ubuntu3.7 [905 kB]
+Get:51 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 xauth arm64 1:1.1.2-1.1build1 [25.4 kB]
+Get:52 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 xz-utils arm64 5.8.3-1 [406 kB]
+Get:53 http://ports.ubuntu.com/ubuntu-ports resolute-updates/main arm64 libcurl3t64-gnutls arm64 8.18.0-1ubuntu2.7 [406 kB]
+Get:54 http://ports.ubuntu.com/ubuntu-ports resolute-updates/main arm64 perl-modules-5.40 all 5.40.1-7ubuntu0.3 [3212 kB]
+Get:55 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 libgdbm-compat4t64 arm64 1.26-1build1 [6650 B]
+Get:56 http://ports.ubuntu.com/ubuntu-ports resolute-updates/main arm64 libperl5.40 arm64 5.40.1-7ubuntu0.3 [4784 kB]
+Get:57 https://download.docker.com/linux/ubuntu resolute/stable arm64 docker-buildx-plugin arm64 0.38.0-1~ubuntu.26.04~resolute [15.3 MB]
+Get:58 http://ports.ubuntu.com/ubuntu-ports resolute-updates/main arm64 perl arm64 5.40.1-7ubuntu0.3 [262 kB]
+Get:59 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 liberror-perl all 0.17030-1 [23.5 kB]
+Get:60 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 git-man all 1:2.53.0-1ubuntu1 [1202 kB]
+Get:61 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 git arm64 1:2.53.0-1ubuntu1 [4232 kB]
+Get:62 http://ports.ubuntu.com/ubuntu-ports resolute/main arm64 patch arm64 2.8-2build1 [93.4 kB]
+Get:63 http://ports.ubuntu.com/ubuntu-ports resolute-updates/main arm64 systemd-timesyncd arm64 259.5-0ubuntu3.4 [40.3 kB]
+Get:64 https://download.docker.com/linux/ubuntu resolute/stable arm64 docker-ce-rootless-extras arm64 5:29.8.2-1~ubuntu.26.04~resolute [9130 kB]
+Get:65 https://download.docker.com/linux/ubuntu resolute/stable arm64 docker-compose-plugin arm64 5.6.0-1~ubuntu.26.04~resolute [6886 kB]
+debconf: unable to initialize frontend: Dialog
+debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC entries checked: /etc/perl /usr/local/lib/aarch64-linux-gnu/perl/5.40.1 /usr/local/share/perl/5.40.1 /usr/lib/aarch64-linux-gnu/perl5/5.40 /usr/share/perl5 /usr/lib/aarch64-linux-gnu/perl-base /usr/lib/aarch64-linux-gnu/perl/5.40 /usr/share/perl/5.40 /usr/local/lib/site_perl) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 8, <STDIN> line 65.)
+debconf: falling back to frontend: Teletype
+debconf: unable to initialize frontend: Teletype
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Noninteractive
+Preconfiguring packages ...
+Fetched 114 MB in 30s (3755 kB/s)
+Selecting previously unselected package libsystemd-shared:arm64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 11110 files and directories currently installed.)
+Preparing to unpack .../libsystemd-shared_259.5-0ubuntu3.4_arm64.deb ...
+Unpacking libsystemd-shared:arm64 (259.5-0ubuntu3.4) ...
+Setting up libsystemd-shared:arm64 (259.5-0ubuntu3.4) ...
+Selecting previously unselected package systemd.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 11118 files and directories currently installed.)
+Preparing to unpack .../systemd_259.5-0ubuntu3.4_arm64.deb ...
+Unpacking systemd (259.5-0ubuntu3.4) ...
+Setting up systemd (259.5-0ubuntu3.4) ...
+Created symlink '/etc/systemd/system/getty.target.wants/getty@tty1.service' → '/usr/lib/systemd/system/getty@.service'.
+Created symlink '/etc/systemd/system/multi-user.target.wants/remote-fs.target' → '/usr/lib/systemd/system/remote-fs.target'.
+Created symlink '/etc/systemd/system/sysinit.target.wants/systemd-pstore.service' → '/usr/lib/systemd/system/systemd-pstore.service'.
+Initializing machine ID from random generator.
+Creating group 'systemd-journal' with GID 999.
+Creating group 'systemd-network' with GID 998.
+Creating user 'systemd-network' (systemd Network Management) with UID 998 and GID 998.
+Selecting previously unselected package systemd-sysv.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 12095 files and directories currently installed.)
+Preparing to unpack .../00-systemd-sysv_259.5-0ubuntu3.4_arm64.deb ...
+Unpacking systemd-sysv (259.5-0ubuntu3.4) ...
+Selecting previously unselected package containerd.io.
+Preparing to unpack .../01-containerd.io_2.3.6-1~ubuntu.26.04~resolute_arm64.deb ...
+Unpacking containerd.io (2.3.6-1~ubuntu.26.04~resolute) ...
+Selecting previously unselected package docker-ce-cli.
+Preparing to unpack .../02-docker-ce-cli_5%3a29.8.2-1~ubuntu.26.04~resolute_arm64.deb ...
+Unpacking docker-ce-cli (5:29.8.2-1~ubuntu.26.04~resolute) ...
+Selecting previously unselected package libip4tc2:arm64.
+Preparing to unpack .../03-libip4tc2_1.8.11-2ubuntu3_arm64.deb ...
+Unpacking libip4tc2:arm64 (1.8.11-2ubuntu3) ...
+Selecting previously unselected package libip6tc2:arm64.
+Preparing to unpack .../04-libip6tc2_1.8.11-2ubuntu3_arm64.deb ...
+Unpacking libip6tc2:arm64 (1.8.11-2ubuntu3) ...
+Selecting previously unselected package libxtables12:arm64.
+Preparing to unpack .../05-libxtables12_1.8.11-2ubuntu3_arm64.deb ...
+Unpacking libxtables12:arm64 (1.8.11-2ubuntu3) ...
+Selecting previously unselected package libmnl0:arm64.
+Preparing to unpack .../06-libmnl0_1.0.5-3build1_arm64.deb ...
+Unpacking libmnl0:arm64 (1.0.5-3build1) ...
+Selecting previously unselected package libnfnetlink0:arm64.
+Preparing to unpack .../07-libnfnetlink0_1.0.2-3build1_arm64.deb ...
+Unpacking libnfnetlink0:arm64 (1.0.2-3build1) ...
+Selecting previously unselected package libnetfilter-conntrack3:arm64.
+Preparing to unpack .../08-libnetfilter-conntrack3_1.1.1-1_arm64.deb ...
+Unpacking libnetfilter-conntrack3:arm64 (1.1.1-1) ...
+Selecting previously unselected package libnftnl11:arm64.
+Preparing to unpack .../09-libnftnl11_1.3.1-1_arm64.deb ...
+Unpacking libnftnl11:arm64 (1.3.1-1) ...
+Selecting previously unselected package iptables.
+Preparing to unpack .../10-iptables_1.8.11-2ubuntu3_arm64.deb ...
+Unpacking iptables (1.8.11-2ubuntu3) ...
+Selecting previously unselected package libjansson4:arm64.
+Preparing to unpack .../11-libjansson4_2.14-2build4_arm64.deb ...
+Unpacking libjansson4:arm64 (2.14-2build4) ...
+Selecting previously unselected package libnftables1:arm64.
+Preparing to unpack .../12-libnftables1_1.1.6-1_arm64.deb ...
+Unpacking libnftables1:arm64 (1.1.6-1) ...
+Selecting previously unselected package libedit2:arm64.
+Preparing to unpack .../13-libedit2_3.1-20251016-1_arm64.deb ...
+Unpacking libedit2:arm64 (3.1-20251016-1) ...
+Selecting previously unselected package nftables.
+Preparing to unpack .../14-nftables_1.1.6-1_arm64.deb ...
+Unpacking nftables (1.1.6-1) ...
+Selecting previously unselected package docker-ce.
+Preparing to unpack .../15-docker-ce_5%3a29.8.2-1~ubuntu.26.04~resolute_arm64.deb ...
+Unpacking docker-ce (5:29.8.2-1~ubuntu.26.04~resolute) ...
+Selecting previously unselected package pigz.
+Preparing to unpack .../16-pigz_2.8-1build1_arm64.deb ...
+Unpacking pigz (2.8-1build1) ...
+Selecting previously unselected package adduser.
+Preparing to unpack .../17-adduser_3.153ubuntu1_all.deb ...
+Unpacking adduser (3.153ubuntu1) ...
+Setting up adduser (3.153ubuntu1) ...
+Selecting previously unselected package libdbus-1-3:arm64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 12722 files and directories currently installed.)
+Preparing to unpack .../00-libdbus-1-3_1.16.2-2ubuntu4_arm64.deb ...
+Unpacking libdbus-1-3:arm64 (1.16.2-2ubuntu4) ...
+Selecting previously unselected package dbus-bin.
+Preparing to unpack .../01-dbus-bin_1.16.2-2ubuntu4_arm64.deb ...
+Unpacking dbus-bin (1.16.2-2ubuntu4) ...
+Selecting previously unselected package dbus-session-bus-common.
+Preparing to unpack .../02-dbus-session-bus-common_1.16.2-2ubuntu4_all.deb ...
+Unpacking dbus-session-bus-common (1.16.2-2ubuntu4) ...
+Selecting previously unselected package dbus-daemon.
+Preparing to unpack .../03-dbus-daemon_1.16.2-2ubuntu4_arm64.deb ...
+Unpacking dbus-daemon (1.16.2-2ubuntu4) ...
+Selecting previously unselected package dbus-system-bus-common.
+Preparing to unpack .../04-dbus-system-bus-common_1.16.2-2ubuntu4_all.deb ...
+Unpacking dbus-system-bus-common (1.16.2-2ubuntu4) ...
+Selecting previously unselected package dbus.
+Preparing to unpack .../05-dbus_1.16.2-2ubuntu4_arm64.deb ...
+Unpacking dbus (1.16.2-2ubuntu4) ...
+Selecting previously unselected package libpam-systemd:arm64.
+Preparing to unpack .../06-libpam-systemd_259.5-0ubuntu3.4_arm64.deb ...
+Unpacking libpam-systemd:arm64 (259.5-0ubuntu3.4) ...
+Selecting previously unselected package dbus-user-session.
+Preparing to unpack .../07-dbus-user-session_1.16.2-2ubuntu4_arm64.deb ...
+Unpacking dbus-user-session (1.16.2-2ubuntu4) ...
+Selecting previously unselected package libdevmapper1.02.1:arm64.
+Preparing to unpack .../08-libdevmapper1.02.1_2%3a1.02.205-2ubuntu3_arm64.deb ...
+Unpacking libdevmapper1.02.1:arm64 (2:1.02.205-2ubuntu3) ...
+Selecting previously unselected package dmsetup.
+Preparing to unpack .../09-dmsetup_2%3a1.02.205-2ubuntu3_arm64.deb ...
+Unpacking dmsetup (2:1.02.205-2ubuntu3) ...
+Selecting previously unselected package less.
+Preparing to unpack .../10-less_668-1build1_arm64.deb ...
+Unpacking less (668-1build1) ...
+Selecting previously unselected package libjson-c5:arm64.
+Preparing to unpack .../11-libjson-c5_0.18+ds-3_arm64.deb ...
+Unpacking libjson-c5:arm64 (0.18+ds-3) ...
+Selecting previously unselected package libcryptsetup12:arm64.
+Preparing to unpack .../12-libcryptsetup12_2%3a2.8.4-1ubuntu4_arm64.deb ...
+Unpacking libcryptsetup12:arm64 (2:2.8.4-1ubuntu4) ...
+Selecting previously unselected package libkmod2:arm64.
+Preparing to unpack .../13-libkmod2_34.2-2ubuntu2_arm64.deb ...
+Unpacking libkmod2:arm64 (34.2-2ubuntu2) ...
+Selecting previously unselected package libnss-systemd:arm64.
+Preparing to unpack .../14-libnss-systemd_259.5-0ubuntu3.4_arm64.deb ...
+Unpacking libnss-systemd:arm64 (259.5-0ubuntu3.4) ...
+Selecting previously unselected package linux-sysctl-defaults.
+Preparing to unpack .../15-linux-sysctl-defaults_4.15ubuntu5_all.deb ...
+Unpacking linux-sysctl-defaults (4.15ubuntu5) ...
+Selecting previously unselected package systemd-cryptsetup.
+Preparing to unpack .../16-systemd-cryptsetup_259.5-0ubuntu3.4_arm64.deb ...
+Unpacking systemd-cryptsetup (259.5-0ubuntu3.4) ...
+Selecting previously unselected package systemd-resolved.
+Preparing to unpack .../17-systemd-resolved_259.5-0ubuntu3.4_arm64.deb ...
+Unpacking systemd-resolved (259.5-0ubuntu3.4) ...
+Selecting previously unselected package apparmor.
+Preparing to unpack .../18-apparmor_5.0.2-0ubuntu1~26.04.1_arm64.deb ...
+Unpacking apparmor (5.0.2-0ubuntu1~26.04.1) ...
+Selecting previously unselected package libcbor0.10:arm64.
+Preparing to unpack .../19-libcbor0.10_0.10.2-2ubuntu3_arm64.deb ...
+Unpacking libcbor0.10:arm64 (0.10.2-2ubuntu3) ...
+Selecting previously unselected package libfido2-1:arm64.
+Preparing to unpack .../20-libfido2-1_1.16.0-2build1_arm64.deb ...
+Unpacking libfido2-1:arm64 (1.16.0-2build1) ...
+Selecting previously unselected package libgdbm6t64:arm64.
+Preparing to unpack .../21-libgdbm6t64_1.26-1build1_arm64.deb ...
+Unpacking libgdbm6t64:arm64 (1.26-1build1) ...
+Selecting previously unselected package libxau6:arm64.
+Preparing to unpack .../22-libxau6_1%3a1.0.11-1build2_arm64.deb ...
+Unpacking libxau6:arm64 (1:1.0.11-1build2) ...
+Selecting previously unselected package libxdmcp6:arm64.
+Preparing to unpack .../23-libxdmcp6_1%3a1.1.5-2_arm64.deb ...
+Unpacking libxdmcp6:arm64 (1:1.1.5-2) ...
+Selecting previously unselected package libxcb1:arm64.
+Preparing to unpack .../24-libxcb1_1.17.0-2ubuntu1_arm64.deb ...
+Unpacking libxcb1:arm64 (1.17.0-2ubuntu1) ...
+Selecting previously unselected package libx11-data.
+Preparing to unpack .../25-libx11-data_2%3a1.8.13-1_all.deb ...
+Unpacking libx11-data (2:1.8.13-1) ...
+Selecting previously unselected package libx11-6:arm64.
+Preparing to unpack .../26-libx11-6_2%3a1.8.13-1_arm64.deb ...
+Unpacking libx11-6:arm64 (2:1.8.13-1) ...
+Selecting previously unselected package libxext6:arm64.
+Preparing to unpack .../27-libxext6_2%3a1.3.4-1build3_arm64.deb ...
+Unpacking libxext6:arm64 (2:1.3.4-1build3) ...
+Selecting previously unselected package libxmuu1:arm64.
+Preparing to unpack .../28-libxmuu1_2%3a1.1.3-4_arm64.deb ...
+Unpacking libxmuu1:arm64 (2:1.1.3-4) ...
+Selecting previously unselected package openssh-client.
+Preparing to unpack .../29-openssh-client_1%3a10.2p1-2ubuntu3.7_arm64.deb ...
+Unpacking openssh-client (1:10.2p1-2ubuntu3.7) ...
+Selecting previously unselected package xauth.
+Preparing to unpack .../30-xauth_1%3a1.1.2-1.1build1_arm64.deb ...
+Unpacking xauth (1:1.1.2-1.1build1) ...
+Selecting previously unselected package xz-utils.
+Preparing to unpack .../31-xz-utils_5.8.3-1_arm64.deb ...
+Unpacking xz-utils (5.8.3-1) ...
+Selecting previously unselected package docker-buildx-plugin.
+Preparing to unpack .../32-docker-buildx-plugin_0.38.0-1~ubuntu.26.04~resolute_arm64.deb ...
+Unpacking docker-buildx-plugin (0.38.0-1~ubuntu.26.04~resolute) ...
+Selecting previously unselected package docker-ce-rootless-extras.
+Preparing to unpack .../33-docker-ce-rootless-extras_5%3a29.8.2-1~ubuntu.26.04~resolute_arm64.deb ...
+Unpacking docker-ce-rootless-extras (5:29.8.2-1~ubuntu.26.04~resolute) ...
+Selecting previously unselected package docker-compose-plugin.
+Preparing to unpack .../34-docker-compose-plugin_5.6.0-1~ubuntu.26.04~resolute_arm64.deb ...
+Unpacking docker-compose-plugin (5.6.0-1~ubuntu.26.04~resolute) ...
+Selecting previously unselected package libcurl3t64-gnutls:arm64.
+Preparing to unpack .../35-libcurl3t64-gnutls_8.18.0-1ubuntu2.7_arm64.deb ...
+Unpacking libcurl3t64-gnutls:arm64 (8.18.0-1ubuntu2.7) ...
+Selecting previously unselected package perl-modules-5.40.
+Preparing to unpack .../36-perl-modules-5.40_5.40.1-7ubuntu0.3_all.deb ...
+Unpacking perl-modules-5.40 (5.40.1-7ubuntu0.3) ...
+Selecting previously unselected package libgdbm-compat4t64:arm64.
+Preparing to unpack .../37-libgdbm-compat4t64_1.26-1build1_arm64.deb ...
+Unpacking libgdbm-compat4t64:arm64 (1.26-1build1) ...
+Selecting previously unselected package libperl5.40:arm64.
+Preparing to unpack .../38-libperl5.40_5.40.1-7ubuntu0.3_arm64.deb ...
+Unpacking libperl5.40:arm64 (5.40.1-7ubuntu0.3) ...
+Selecting previously unselected package perl.
+Preparing to unpack .../39-perl_5.40.1-7ubuntu0.3_arm64.deb ...
+Unpacking perl (5.40.1-7ubuntu0.3) ...
+Selecting previously unselected package liberror-perl.
+Preparing to unpack .../40-liberror-perl_0.17030-1_all.deb ...
+Unpacking liberror-perl (0.17030-1) ...
+Selecting previously unselected package git-man.
+Preparing to unpack .../41-git-man_1%3a2.53.0-1ubuntu1_all.deb ...
+Unpacking git-man (1:2.53.0-1ubuntu1) ...
+Selecting previously unselected package git.
+Preparing to unpack .../42-git_1%3a2.53.0-1ubuntu1_arm64.deb ...
+Unpacking git (1:2.53.0-1ubuntu1) ...
+Selecting previously unselected package patch.
+Preparing to unpack .../43-patch_2.8-2build1_arm64.deb ...
+Unpacking patch (2.8-2build1) ...
+Selecting previously unselected package systemd-timesyncd.
+Preparing to unpack .../44-systemd-timesyncd_259.5-0ubuntu3.4_arm64.deb ...
+Unpacking systemd-timesyncd (259.5-0ubuntu3.4) ...
+Setting up libip4tc2:arm64 (1.8.11-2ubuntu3) ...
+Setting up systemd-sysv (259.5-0ubuntu3.4) ...
+Setting up libxau6:arm64 (1:1.0.11-1build2) ...
+Setting up libxdmcp6:arm64 (1:1.1.5-2) ...
+Setting up libxcb1:arm64 (1.17.0-2ubuntu1) ...
+Setting up libgdbm6t64:arm64 (1.26-1build1) ...
+Setting up libgdbm-compat4t64:arm64 (1.26-1build1) ...
+Setting up libcbor0.10:arm64 (0.10.2-2ubuntu3) ...
+Setting up libip6tc2:arm64 (1.8.11-2ubuntu3) ...
+Setting up libedit2:arm64 (3.1-20251016-1) ...
+Setting up libcurl3t64-gnutls:arm64 (8.18.0-1ubuntu2.7) ...
+Setting up less (668-1build1) ...
+Setting up libnss-systemd:arm64 (259.5-0ubuntu3.4) ...
+Setting up libjansson4:arm64 (2.14-2build4) ...
+Setting up apparmor (5.0.2-0ubuntu1~26.04.1) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+debconf: unable to initialize frontend: Teletype
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Noninteractive
+Created symlink '/etc/systemd/system/sysinit.target.wants/apparmor.service' → '/usr/lib/systemd/system/apparmor.service'.
+Setting up docker-buildx-plugin (0.38.0-1~ubuntu.26.04~resolute) ...
+Setting up linux-sysctl-defaults (4.15ubuntu5) ...
+Setting up libx11-data (2:1.8.13-1) ...
+Setting up libdbus-1-3:arm64 (1.16.2-2ubuntu4) ...
+Setting up xz-utils (5.8.3-1) ...
+update-alternatives: using /usr/bin/xz to provide /usr/bin/lzma (lzma) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/lzma.1.gz because associated file /usr/share/man/man1/xz.1.gz (of link group lzma) does not exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/unlzma.1.gz because associated file /usr/share/man/man1/unxz.1.gz (of link group lzma) does not exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/lzcat.1.gz because associated file /usr/share/man/man1/xzcat.1.gz (of link group lzma) does not exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/lzmore.1.gz because associated file /usr/share/man/man1/xzmore.1.gz (of link group lzma) does not exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/lzless.1.gz because associated file /usr/share/man/man1/xzless.1.gz (of link group lzma) does not exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/lzdiff.1.gz because associated file /usr/share/man/man1/xzdiff.1.gz (of link group lzma) does not exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/lzcmp.1.gz because associated file /usr/share/man/man1/xzcmp.1.gz (of link group lzma) does not exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/lzgrep.1.gz because associated file /usr/share/man/man1/xzgrep.1.gz (of link group lzma) does not exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/lzegrep.1.gz because associated file /usr/share/man/man1/xzegrep.1.gz (of link group lzma) does not exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/lzfgrep.1.gz because associated file /usr/share/man/man1/xzfgrep.1.gz (of link group lzma) does not exist
+Setting up libmnl0:arm64 (1.0.5-3build1) ...
+Setting up systemd-timesyncd (259.5-0ubuntu3.4) ...
+Creating group 'systemd-timesync' with GID 997.
+Creating user 'systemd-timesync' (systemd Time Synchronization) with UID 997 and GID 997.
+Created symlink '/etc/systemd/system/dbus-org.freedesktop.timesync1.service' → '/usr/lib/systemd/system/systemd-timesyncd.service'.
+Created symlink '/etc/systemd/system/sysinit.target.wants/systemd-timesyncd.service' → '/usr/lib/systemd/system/systemd-timesyncd.service'.
+Setting up containerd.io (2.3.6-1~ubuntu.26.04~resolute) ...
+Created symlink '/etc/systemd/system/multi-user.target.wants/containerd.service' → '/usr/lib/systemd/system/containerd.service'.
+Setting up patch (2.8-2build1) ...
+Setting up docker-compose-plugin (5.6.0-1~ubuntu.26.04~resolute) ...
+Setting up libxtables12:arm64 (1.8.11-2ubuntu3) ...
+Setting up docker-ce-cli (5:29.8.2-1~ubuntu.26.04~resolute) ...
+Setting up libdevmapper1.02.1:arm64 (2:1.02.205-2ubuntu3) ...
+Setting up perl-modules-5.40 (5.40.1-7ubuntu0.3) ...
+Setting up dmsetup (2:1.02.205-2ubuntu3) ...
+Setting up pigz (2.8-1build1) ...
+Setting up libnfnetlink0:arm64 (1.0.2-3build1) ...
+Setting up dbus-session-bus-common (1.16.2-2ubuntu4) ...
+Setting up git-man (1:2.53.0-1ubuntu1) ...
+Setting up libx11-6:arm64 (2:1.8.13-1) ...
+Setting up dbus-system-bus-common (1.16.2-2ubuntu4) ...
+Creating group 'messagebus' with GID 996.
+Creating user 'messagebus' (System Message Bus) with UID 996 and GID 996.
+Setting up libfido2-1:arm64 (1.16.0-2build1) ...
+Setting up libjson-c5:arm64 (0.18+ds-3) ...
+Setting up libxmuu1:arm64 (2:1.1.3-4) ...
+Setting up dbus-bin (1.16.2-2ubuntu4) ...
+Setting up libkmod2:arm64 (34.2-2ubuntu2) ...
+Setting up openssh-client (1:10.2p1-2ubuntu3.7) ...
+Created symlink '/etc/systemd/user/sockets.target.wants/ssh-agent.socket' → '/usr/lib/systemd/user/ssh-agent.socket'.
+Setting up libxext6:arm64 (2:1.3.4-1build3) ...
+Setting up libnftnl11:arm64 (1.3.1-1) ...
+Setting up dbus-daemon (1.16.2-2ubuntu4) ...
+Setting up libperl5.40:arm64 (5.40.1-7ubuntu0.3) ...
+Setting up perl (5.40.1-7ubuntu0.3) ...
+Setting up dbus (1.16.2-2ubuntu4) ...
+Setting up xauth (1:1.1.2-1.1build1) ...
+Setting up libnetfilter-conntrack3:arm64 (1.1.1-1) ...
+Setting up libpam-systemd:arm64 (259.5-0ubuntu3.4) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+debconf: unable to initialize frontend: Teletype
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Noninteractive
+Setting up libcryptsetup12:arm64 (2:2.8.4-1ubuntu4) ...
+Setting up systemd-resolved (259.5-0ubuntu3.4) ...
+Converting /etc/resolv.conf to a symlink to /run/systemd/resolve/stub-resolv.conf...
+mv: cannot move '/etc/resolv.conf' to '/etc/.resolv.conf.systemd-resolved.bak': Device or resource busy
+Cannot take a backup of /etc/resolv.conf.
+ln: failed to create symbolic link '/etc/resolv.conf': Already exists
+Cannot install symlink from /etc/resolv.conf to ../run/systemd/resolve/stub-resolv.conf
+Creating group 'systemd-resolve' with GID 995.
+Creating user 'systemd-resolve' (systemd Resolver) with UID 995 and GID 995.
+Created symlink '/etc/systemd/system/dbus-org.freedesktop.resolve1.service' → '/usr/lib/systemd/system/systemd-resolved.service'.
+Created symlink '/etc/systemd/system/sysinit.target.wants/systemd-resolved.service' → '/usr/lib/systemd/system/systemd-resolved.service'.
+Created symlink '/etc/systemd/system/sockets.target.wants/systemd-resolved-varlink.socket' → '/usr/lib/systemd/system/systemd-resolved-varlink.socket'.
+Created symlink '/etc/systemd/system/sockets.target.wants/systemd-resolved-monitor.socket' → '/usr/lib/systemd/system/systemd-resolved-monitor.socket'.
+Setting up libnftables1:arm64 (1.1.6-1) ...
+Setting up nftables (1.1.6-1) ...
+Setting up iptables (1.8.11-2ubuntu3) ...
+update-alternatives: using /usr/sbin/iptables-legacy to provide /usr/sbin/iptables (iptables) in auto mode
+update-alternatives: using /usr/sbin/ip6tables-legacy to provide /usr/sbin/ip6tables (ip6tables) in auto mode
+update-alternatives: using /usr/sbin/iptables-nft to provide /usr/sbin/iptables (iptables) in auto mode
+update-alternatives: using /usr/sbin/ip6tables-nft to provide /usr/sbin/ip6tables (ip6tables) in auto mode
+update-alternatives: using /usr/sbin/arptables-nft to provide /usr/sbin/arptables (arptables) in auto mode
+update-alternatives: using /usr/sbin/ebtables-nft to provide /usr/sbin/ebtables (ebtables) in auto mode
+Setting up liberror-perl (0.17030-1) ...
+Setting up dbus-user-session (1.16.2-2ubuntu4) ...
+Setting up systemd-cryptsetup (259.5-0ubuntu3.4) ...
+Setting up docker-ce (5:29.8.2-1~ubuntu.26.04~resolute) ...
+invoke-rc.d: could not determine current runlevel
+invoke-rc.d: policy-rc.d denied execution of start.
+Created symlink '/etc/systemd/system/multi-user.target.wants/docker.service' → '/usr/lib/systemd/system/docker.service'.
+Created symlink '/etc/systemd/system/sockets.target.wants/docker.socket' → '/usr/lib/systemd/system/docker.socket'.
+Setting up git (1:2.53.0-1ubuntu1) ...
+Setting up docker-ce-rootless-extras (5:29.8.2-1~ubuntu.26.04~resolute) ...
+Processing triggers for systemd (259.5-0ubuntu3.4) ...
+Processing triggers for procps (2:4.0.4-9ubuntu1) ...
+procps: Applying updated sysctl configuration
+sysctl: setting key "kernel.core_pattern", ignoring: Read-only file system
+sysctl: setting key "kernel.sysrq", ignoring: Read-only file system
+sysctl: setting key "kernel.core_uses_pid", ignoring: Read-only file system
+sysctl: setting key "net.ipv4.conf.default.rp_filter", ignoring: Read-only file system
+sysctl: setting key "net.ipv4.conf.erspan0.rp_filter", ignoring: Read-only file system
+sysctl: setting key "net.ipv4.conf.eth0.rp_filter", ignoring: Read-only file system
+sysctl: setting key "net.ipv4.conf.gre0.rp_filter", ignoring: Read-only file system
+sysctl: setting key "net.ipv4.conf.gretap0.rp_filter", ignoring: Read-only file system
+sysctl: setting key "net.ipv4.conf.ip6_vti0.rp_filter", ignoring: Read-only file system
+sysctl: setting key "net.ipv4.conf.ip6gre0.rp_filter", ignoring: Read-only file system
+sysctl: setting key "net.ipv4.conf.ip6tnl0.rp_filter", ignoring: Read-only file system
+sysctl: setting key "net.ipv4.conf.ip_vti0.rp_filter", ignoring: Read-only file system
+sysctl: setting key "net.ipv4.conf.lo.rp_filter", ignoring: Read-only file system
+sysctl: setting key "net.ipv4.conf.sit0.rp_filter", ignoring: Read-only file system
+sysctl: setting key "net.ipv4.conf.tunl0.rp_filter", ignoring: Read-only file system
+sysctl: setting key "net.ipv4.conf.default.accept_source_route", ignoring: Read-only file system
+sysctl: setting key "net.ipv4.conf.erspan0.accept_source_route", ignoring: Read-only file system
+sysctl: setting key "net.ipv4.conf.eth0.accept_source_route", ignoring: Read-only file system
+sysctl: setting key "net.ipv4.conf.gre0.accept_source_route", ignoring: Read-only file system
+sysctl: setting key "net.ipv4.conf.gretap0.accept_source_route", ignoring: Read-only file system
+sysctl: setting key "net.ipv4.conf.ip6_vti0.accept_source_route", ignoring: Read-only file system
+sysctl: setting key "net.ipv4.conf.ip6gre0.accept_source_route", ignoring: Read-only file system
+sysctl: setting key "net.ipv4.conf.ip6tnl0.accept_source_route", ignoring: Read-only file system
+sysctl: setting key "net.ipv4.conf.ip_vti0.accept_source_route", ignoring: Read-only file system
+sysctl: setting key "net.ipv4.conf.lo.accept_source_route", ignoring: Read-only file system
+sysctl: setting key "net.ipv4.conf.sit0.accept_source_route", ignoring: Read-only file system
+sysctl: setting key "net.ipv4.conf.tunl0.accept_source_route", ignoring: Read-only file system
+sysctl: setting key "net.ipv4.conf.default.promote_secondaries", ignoring: Read-only file system
+sysctl: setting key "net.ipv4.conf.erspan0.promote_secondaries", ignoring: Read-only file system
+sysctl: setting key "net.ipv4.conf.eth0.promote_secondaries", ignoring: Read-only file system
+sysctl: setting key "net.ipv4.conf.gre0.promote_secondaries", ignoring: Read-only file system
+sysctl: setting key "net.ipv4.conf.gretap0.promote_secondaries", ignoring: Read-only file system
+sysctl: setting key "net.ipv4.conf.ip6_vti0.promote_secondaries", ignoring: Read-only file system
+sysctl: setting key "net.ipv4.conf.ip6gre0.promote_secondaries", ignoring: Read-only file system
+sysctl: setting key "net.ipv4.conf.ip6tnl0.promote_secondaries", ignoring: Read-only file system
+sysctl: setting key "net.ipv4.conf.ip_vti0.promote_secondaries", ignoring: Read-only file system
+sysctl: setting key "net.ipv4.conf.lo.promote_secondaries", ignoring: Read-only file system
+sysctl: setting key "net.ipv4.conf.sit0.promote_secondaries", ignoring: Read-only file system
+sysctl: setting key "net.ipv4.conf.tunl0.promote_secondaries", ignoring: Read-only file system
+sysctl: setting key "net.ipv4.ping_group_range", ignoring: Read-only file system
+sysctl: setting key "fs.protected_hardlinks", ignoring: Read-only file system
+sysctl: setting key "fs.protected_symlinks", ignoring: Read-only file system
+sysctl: setting key "fs.protected_regular", ignoring: Read-only file system
+sysctl: setting key "fs.protected_fifos", ignoring: Read-only file system
+sysctl: setting key "vm.max_map_count", ignoring: Read-only file system
+sysctl: setting key "kernel.pid_max", ignoring: Read-only file system
+sysctl: setting key "kernel.printk", ignoring: Read-only file system
+sysctl: setting key "net.ipv6.conf.all.use_tempaddr", ignoring: Read-only file system
+sysctl: setting key "net.ipv6.conf.default.use_tempaddr", ignoring: Read-only file system
+sysctl: setting key "kernel.kptr_restrict", ignoring: Read-only file system
+sysctl: setting key "kernel.sysrq", ignoring: Read-only file system
+sysctl: setting key "vm.max_map_count", ignoring: Read-only file system
+sysctl: setting key "net.ipv4.conf.default.rp_filter", ignoring: Read-only file system
+sysctl: setting key "net.ipv4.conf.all.rp_filter", ignoring: Read-only file system
+sysctl: setting key "vm.mmap_min_addr", ignoring: Read-only file system
+Processing triggers for libc-bin (2.43-2ubuntu2.4) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+debconf: unable to initialize frontend: Teletype
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Noninteractive
+WARNING: systemd not running: not enabling services; Docker must already be available
+WARNING: added ops to the docker group: log out and back in before running extract.py by hand
+
+==> Python environment
+venv ready: Python 3.14.4
+
+==> Sizing docling-serve for this machine (.env)
+  # Written by scripts/setup_ubuntu.sh for 2 CPUs / 7.7 GB RAM. Edit, or rerun with --resize.
+  DOCLING_WORKERS=1
+  DOCLING_THREADS=2
+  DOCLING_MEMORY=6200M
+
+==> Starting docling-serve (first pull downloads ~2.2 GB)
+ Container docling_ocr_worker_cpu Recreate 
+ Container docling_ocr_worker_cpu Recreated 
+ Container docling_ocr_worker_cpu Starting 
+ Container docling_ocr_worker_cpu Started 
+Waiting for /health.. ok
+Container memory: 872.9MiB / 6.055GiB
+
+==> Installing cron entry (every 5 min)
+*/5 * * * * cd /opt/app && DOCLING_URL=http://host.docker.internal:5001 flock -n /tmp/docling-batch-extract.lock .venv/bin/python extract.py >/dev/null 2>&1 # docling-batch-extract
+
+==> Done
+Drop PDFs into:   /opt/app/inputs/
+Results:          /opt/app/outputs/   (PDFs move to completed/ or errors/)
+Per-PDF logs:     /opt/app/logs/
+Run now by hand:  cd /opt/app && .venv/bin/python extract.py
+Service status:   docker compose ps · curl http://host.docker.internal:5001/health
+Remove cron:      crontab -l | grep -v '# docling-batch-extract' | crontab -
+
+Security: never open port 5001 in a firewall or cloud security group; the service has no
+authentication. Use an SSH tunnel to reach it: ssh -L 5001:localhost:5001 <user>@<server>
+
+######## 1b. Target machine: cap the docling container at 2 CPUs (2 vCPU / 8 GB simulation)
+nproc in this server: 2 · docling container CPU limit: 2
+
+######## 2. Setup results
+# Written by scripts/setup_ubuntu.sh for 2 CPUs / 7.7 GB RAM. Edit, or rerun with --resize.
+DOCLING_WORKERS=1
+DOCLING_THREADS=2
+DOCLING_MEMORY=6200M
+.env sized for 2 CPUs
+{"status":"ok"}
+venv ok
+folders ok
+*/5 * * * * cd /opt/app && DOCLING_URL=http://host.docker.internal:5001 flock -n /tmp/docling-batch-extract.lock .venv/bin/python extract.py >/dev/null 2>&1 # docling-batch-extract
+
+######## 3. Setup is safe to run again (one cron entry)
+WARNING: 4 CPUs recommended (container runs 2 workers x 2 threads)
+WARNING: systemd not running: not enabling services; Docker must already be available
+ Container docling_ocr_worker_cpu Running 
+one cron entry
+
+######## 4. Smoke test: inputs/ → outputs/ + completed/, corrupt PDF → errors/
+2026-10-08T15:50:51 [bad] DOC_FAILED  doc=bad.pdf reason="unreadable PDF: Stream has ended unexpectedly" moved=errors/bad.pdf
+2026-10-08T15:50:51 [small_a] DOC_START   doc=small_a.pdf pages=3 chunks=1 chunk_pages=5 scanned_pages=0% force_ocr=False size_mb=0.0
+2026-10-08T15:50:51 RUN_START   files=1 pages=3 chunks=1 max_inflight=1 chunk_pages=5 scanned_chunk_pages=0 version=0.1.0 docling_serve=1.36.0 restarts=0
+2026-10-08T15:50:53 [small_a] SUBMIT      chunk=1/1 pages=1-3 mem=0.9/6.1GiB
+2026-10-08T15:51:08 [small_a] CHUNK_DONE  chunk=1/1 pages=1-3 secs=15.2 sec_per_page=5.07 mem=1.3/6.1GiB
+2026-10-08T15:51:08 [small_a] DOC_DONE    pages=3 chunks=1 secs=15.2 sec_per_page=5.07 output=outputs/small_a.json moved=completed/small_a.pdf
+2026-10-08T15:51:08 RUN_END     ok=1 failed=1 pages=3 secs=15.2 sec_per_page=5.07 restarts=0
+exit code 1 as expected
+files routed ok
+json ok
+
+######## 5. cleanup.sh
+Will clean in /opt/app:
+  empty   outputs/  (2 items)
+  empty   completed/  (2 items)
+  empty   errors/  (1 items)
+  empty   logs/  (4 items)
+  remove  __pycache__/  (1 items)
+(dry run: nothing removed)
+Will clean in /opt/app:
+  empty   outputs/  (2 items)
+  empty   completed/  (2 items)
+  empty   errors/  (1 items)
+  empty   logs/  (4 items)
+  empty   inputs/  (0 items)
+  remove  __pycache__/  (1 items)
+  NOTE: inputs/ holds PDFs that have not been processed yet.
+Cleanup done.
+cleanup ok: folders empty, .gitignore kept
+
+######## 6. First demo run (scripts/demo_run.sh)
+
+== 1. Environment checks
+  [ OK ]  OS: Ubuntu 26.04.1 LTS (aarch64)
+  [ OK ]  Host: aarch64 CPU, 2 CPUs, 7.7 GB RAM, 23 GB free disk
+  [ OK ]  Docker: 29.8.2, 4 CPUs, 7.7 GB available to containers
+  [ OK ]  Container docling_ocr_worker_cpu running (memory limit 6.055GiB, restarts so far 0)
+  [ OK ]  Port 5001 published on loopback only (127.0.0.1:5001)
+  [ OK ]  Service healthy at http://host.docker.internal:5001
+  [ OK ]  Python venv: Python 3.14.4, requests + pypdf installed
+  [ OK ]  Data folders present and writable
+
+All checks passed (0 warning(s)).
+
+== 2. Demo input
+  copied docling_paper.pdf → inputs/
+
+== 3. Running extract.py
+2026-10-08T15:51:09 [docling_paper] DOC_START   doc=docling_paper.pdf pages=9 chunks=2 chunk_pages=5 scanned_pages=11% force_ocr=False size_mb=5.6
+2026-10-08T15:51:10 RUN_START   files=1 pages=9 chunks=2 max_inflight=1 chunk_pages=5 scanned_chunk_pages=0 version=0.1.0 docling_serve=1.36.0 restarts=0
+2026-10-08T15:51:11 [docling_paper] SUBMIT      chunk=1/2 pages=1-5 mem=1.3/6.1GiB
+2026-10-08T15:51:26 [docling_paper] CHUNK_DONE  chunk=1/2 pages=1-5 secs=15.2 sec_per_page=3.04 mem=1.3/6.1GiB
+2026-10-08T15:51:26 [docling_paper] SUBMIT      chunk=2/2 pages=6-9 mem=1.3/6.1GiB
+2026-10-08T15:51:28 [docling_paper] PROGRESS    running=[#2(2s)] done=1/2 elapsed=17s mem=1.3/6.1GiB
+2026-10-08T15:51:44 [docling_paper] PROGRESS    running=[#2(18s)] done=1/2 elapsed=33s mem=1.8/6.1GiB
+2026-10-08T15:52:00 [docling_paper] PROGRESS    running=[#2(34s)] done=1/2 elapsed=49s mem=1.9/6.1GiB
+2026-10-08T15:52:06 [docling_paper] CHUNK_DONE  chunk=2/2 pages=6-9 secs=39.3 sec_per_page=9.83 mem=1.6/6.1GiB
+2026-10-08T15:52:06 [docling_paper] DOC_DONE    pages=9 chunks=2 secs=54.5 sec_per_page=6.06 output=outputs/docling_paper.json moved=completed/docling_paper.pdf
+2026-10-08T15:52:06 RUN_END     ok=1 failed=0 pages=9 secs=54.5 sec_per_page=6.06 restarts=0
+
+== 4. Benchmark
+# Demo benchmark
+
+| Machine | |
+|---|---|
+| OS | Ubuntu 26.04.1 LTS |
+| CPU | aarch64 CPU (2 CPUs, 7.7 GB RAM) |
+| Docker | 4 CPUs, 7.7 GB available; container limit 6.055GiB |
+
+| PDF | Pages | Chunks | Scanned | OCR forced | Seconds | Sec/page | Markdown chars | Result |
+|-----|-------|--------|---------|------------|---------|----------|----------------|--------|
+| docling_paper.pdf | 9 | 2 | 11% | False | 54.5 | 6.06 | 35,896 | OK |
+
+| Run | |
+|---|---|
+| Wall time | 57 s |
+| Throughput | 568 pages/hour (6.33 s/page) |
+| Time per 1,000 pages at this rate | 1.8 h |
+| Peak container memory | 2.16 GiB of 6.055GiB |
+| Container restarts during run | 0 |
+| extract.py exit code | 0 (all converted) |
+
+Note: the first conversion after the container starts includes ~20–45 s of pipeline
+start-up, so a one-document demo understates steady-state throughput. A small demo is a
+smoke test; size a batch with `tests/run_acceptance.sh --bench-only`.
+
+Report saved: logs/demo-benchmark-20261008-155206.md
+Demo outputs removed (--clean-after); the report is kept.
+
+######## 7. Acceptance checks
+# Acceptance run 2026-10-08_1552
+
+Host: Linux aarch64 · Docker VM: 4 CPUs, 8215646208 bytes · container limit:  6.055GiB
+
+## Checks
+
+| ID | Result | Check |
+|----|--------|-------|
+| A1 | PASS | single file, about 450 lines or fewer, third-party imports are only requests + pypdf |
+| A6 | PASS | only read-only docker commands (stats, inspect) in extract.py |
+| A25 | PASS | docling-serve published on loopback only (127.0.0.1:5001), never on the network |
+| A2 | PASS | full run: one JSON per good PDF in outputs/ (5 expected) |
+| A9 | PASS | corrupt bad.pdf → DOC_FAILED, others succeed, exit code 1 |
+| A11 | PASS | inputs/ empty, good PDFs in completed/ |
+| A12 | PASS | bad.pdf moved to errors/ |
+| A13 | PASS | every PDF in completed/ has outputs/<stem>.json |
+| A7 | PASS | every JSON is valid, matches the schema (incl. extractor and engine versions), pages = real page count |
+| A14 | PASS | one log per PDF, each containing only its own document's lines |
+| A15 | PASS | PROGRESS lines logged while converting |
+| A22 | PASS | no container restart during the full run (restarts 0 → 0) |
+| A23 | PASS | OCR forced only on the scanned PDF(s) |
+| A8 | PASS | rerun with empty inputs/: nothing processed, exit code 0 |
+| A19 | PASS | --mem-high 0.3: THROTTLE logged and the run still completes |
+| A20 | PASS | memory monitor unavailable: warning logged, run completes |
+| A21 | PASS | container restarted mid-run: chunks resent, all PDFs completed |
+| A10 | PASS | server down: exit code 2, PDF stays in inputs/ |
+
+Full run: ok=5 failed=1 pages=103 secs=460.3 sec_per_page=4.47 restarts=0 · peak container memory 2.8 GiB
+
+**18 passed, 0 failed.**
+
+######## ALL STEPS PASSED

@@ -1,0 +1,22 @@
+2026-10-08T17:57:20 [large] DOC_START   doc=large.pdf pages=60 chunks=1 chunk_pages=0 scanned_pages=0% force_ocr=False size_mb=0.1
+2026-10-08T17:57:20 RUN_START   files=1 pages=60 chunks=1 max_inflight=2 chunk_pages=0 restarts=0
+2026-10-08T17:57:22 [large] SUBMIT      chunk=1/1 pages=1-60 mem=2.0/6.3GiB
+2026-10-08T17:57:32 [large] PROGRESS    running=[#1(10s)] done=0/1 elapsed=10s mem=2.4/6.3GiB
+2026-10-08T17:57:42 [large] PROGRESS    running=[#1(20s)] done=0/1 elapsed=20s mem=2.4/6.3GiB
+2026-10-08T17:57:52 [large] PROGRESS    running=[#1(30s)] done=0/1 elapsed=30s mem=2.4/6.3GiB
+2026-10-08T17:58:02 [large] PROGRESS    running=[#1(40s)] done=0/1 elapsed=40s mem=2.4/6.3GiB
+2026-10-08T17:58:12 [large] PROGRESS    running=[#1(50s)] done=0/1 elapsed=50s mem=2.4/6.3GiB
+2026-10-08T17:58:22 [large] PROGRESS    running=[#1(60s)] done=0/1 elapsed=60s mem=2.4/6.3GiB
+2026-10-08T17:58:32 [large] PROGRESS    running=[#1(70s)] done=0/1 elapsed=70s mem=2.3/6.3GiB
+2026-10-08T17:58:42 [large] PROGRESS    running=[#1(80s)] done=0/1 elapsed=80s mem=2.4/6.3GiB
+2026-10-08T17:58:52 [large] PROGRESS    running=[#1(90s)] done=0/1 elapsed=90s mem=2.3/6.3GiB
+2026-10-08T17:59:02 [large] PROGRESS    running=[#1(100s)] done=0/1 elapsed=100s mem=2.4/6.3GiB
+2026-10-08T17:59:12 [large] PROGRESS    running=[#1(110s)] done=0/1 elapsed=110s mem=2.4/6.3GiB
+2026-10-08T17:59:22 [large] PROGRESS    running=[#1(120s)] done=0/1 elapsed=120s mem=2.0/6.3GiB
+2026-10-08T17:59:32 [large] PROGRESS    running=[#1(130s)] done=0/1 elapsed=130s mem=2.1/6.3GiB
+2026-10-08T17:59:42 [large] PROGRESS    running=[#1(140s)] done=0/1 elapsed=140s mem=2.1/6.3GiB
+2026-10-08T17:59:52 [large] PROGRESS    running=[#1(150s)] done=0/1 elapsed=150s mem=2.1/6.3GiB
+2026-10-08T18:00:02 [large] PROGRESS    running=[#1(160s)] done=0/1 elapsed=160s mem=2.2/6.3GiB
+2026-10-08T18:00:11 [large] CHUNK_DONE  chunk=1/1 pages=1-60 secs=169.3 sec_per_page=2.82 mem=2.2/6.3GiB
+2026-10-08T18:00:11 [large] DOC_DONE    pages=60 chunks=1 secs=169.3 sec_per_page=2.82 output=outputs/large.json moved=completed/large.pdf
+2026-10-08T18:00:11 RUN_END     ok=1 failed=0 pages=60 secs=169.3 sec_per_page=2.82 restarts=0
