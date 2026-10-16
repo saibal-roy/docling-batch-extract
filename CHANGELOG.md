@@ -25,6 +25,13 @@ Plan files (`versions/plan-vN.md`) are design history, not release numbers. Each
 
 **Releasing:** the next version's changes collect under `## [X.Y.Z] - Unreleased`. When releasing, replace `Unreleased` with the date (`YYYY-MM-DD`), make sure `__version__` matches, then push the tag `vX.Y.Z`. The *Release* workflow checks that the tag, `__version__` and this file agree, runs the full CI, and creates the GitHub Release from this section.
 
+## [0.1.1] - Unreleased
+
+### Changed
+
+- `pypdf` 6.19.0 → 6.20.1 (Dependabot, #1 and #2). Output unchanged.
+- CI also runs every night on `main`, so a merge made by Dependabot's auto-merge is tested as merged.
+
 ## [0.1.0] - 2026-10-09
 
 First public release: a batch PDF → Markdown extractor for RAG on one CPU-only **2 vCPU / 8 GB** server running **Ubuntu 26.04 LTS**. Plans: [v1](versions/plan-v1.md)–[v7](versions/plan-v7.md).
