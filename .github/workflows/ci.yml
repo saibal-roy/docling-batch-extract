@@ -3,11 +3,14 @@ name: CI
 # Lint, guard against committed documents, then provision a real Ubuntu runner with
 # scripts/setup_ubuntu.sh and run the acceptance suite against the live docling container.
 # Benchmarks (~25 min) run only when started by hand with "benchmarks" ticked.
+# The nightly run tests main as merged: merges made by auto-merge don't start a push run.
 
 on:
   push:
     branches: [main]
   pull_request:
+  schedule:
+    - cron: "30 21 * * *"   # 03:00 IST, after the 01:30 IST Dependabot run and its merges
   workflow_dispatch:
     inputs:
       benchmarks:
